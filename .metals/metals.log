@@ -1,5 +1,75 @@
-The server is listening for incoming connections at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp5297458827210340286/8xzkkb9hgmhp.socket...
-Accepted incoming BSP client connection at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp5297458827210340286/8xzkkb9hgmhp.socket
+The server is listening for incoming connections at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp6811812459868502049/-1cyqbh38sawpk.socket...
+Accepted incoming BSP client connection at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp6811812459868502049/-1cyqbh38sawpk.socket
 request received: build/initialize
 BSP initialization handshake complete.
-something's wrong: no file:///Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/utils/FromMap.scala in Map[String,Any]RangePosition(file:///Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/utils/FromMap.scala, 127, 127, 143)
+shutdown request received: build/shutdown
+Client in /Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/.bloop triggered cancellation. Cancelling tasks...
+The task for 'bsp --protocol local --socket /var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp6811812459868502049/-1cyqbh38sawpk.socket' finished.
+Project root-4aibd-akka-project-test has no analysis and setup.
+Writing /Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/.bloop/root-4aibd-akka-project/root-4aibd-akka-project-analysis.bin.
+The server is listening for incoming connections at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp5726864144311891934/1pj8q15vj7lh8.socket...
+Accepted incoming BSP client connection at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp5726864144311891934/1pj8q15vj7lh8.socket
+request received: build/initialize
+BSP initialization handshake complete.
+something's wrong: no file:///Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/WebServer.scala in Vector[WebServer.Key]RangePosition(file:///Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/WebServer.scala, 757, 757, 768)
+something's wrong: no file:///Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/WebServer.scala in Array[String]RangePosition(file:///Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/WebServer.scala, 1086, 1086, 1099)
+mai 30, 2019 3:28:54 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTraceNotification
+mai 30, 2019 3:29:03 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTraceNotification
+something's wrong: no file:///Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/com/felicita/WebServer.scala in scala.concurrent.Future[akka.http.scaladsl.Http.ServerBinding]RangePosition(file:///Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/com/felicita/WebServer.scala, 1015, 1015, 1041)
+something's wrong: no file:///Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/com/felicita/WebServer.scala in scala.concurrent.Future[akka.http.scaladsl.Http.ServerBinding]RangePosition(file:///Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/com/felicita/WebServer.scala, 1015, 1015, 1041)
+mai 30, 2019 3:48:49 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTraceNotification
+mai 30, 2019 3:49:02 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTraceNotification
+mai 30, 2019 3:49:07 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTraceNotification
+mai 30, 2019 3:49:11 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTraceNotification
+n 1.59s
+ERROR 'root' failed to compile.
+INFO  compiling root (1 scala source)
+INFO  time: compiled root in 1.36s
+ERROR 'root' failed to compile.
+INFO  compiling root (1 scala source)
+INFO  time: compiled root in 2.91s
+INFO  compiling root (2 scala sources)
+INFO  time: compiled root in 2.08s
+INFO  compiling root (2 scala sources)
+INFO  time: compiled root in 1.3s
+INFO  compiling root (7 scala sources)
+INFO  time: compiled root in 2.85s
+INFO  compiling root (2 scala sources)
+INFO  time: compiled root in 0.4s
+ERROR 'root' failed to compile.
+INFO  compiling root (2 scala sources)
+INFO  time: compiled root in 0.36s
+ERROR 'root' failed to compile.
+INFO  compiling root (1 scala source)
+INFO  time: compiled root in 1.66s
+INFO  compiling root (1 scala source)
+INFO  time: compiled root in 0.17s
+ERROR 'root' failed to compile.
+INFO  compiling root (2 scala sources)
+INFO  time: compiled root in 0.25s
+ERROR 'root' failed to compile.
+INFO  compiling root (2 scala sources)
+INFO  time: compiled root in 0.19s
+ERROR 'root' failed to compile.
+INFO  compiling root (2 scala sources)
+INFO  time: compiled root in 0.16s
+ERROR 'root' failed to compile.
+ERROR code navigation does not work for the file '/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/com/felicita/WebServer.scala' because the SemanticDB file '/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/.bloop/root/scala-2.12/classes/META-INF/semanticdb/src/main/scala/com/felicita/WebServer.scala.semanticdb' doesn't exist. There can be many reasons for this error. 
+INFO  compiling root (2 scala sources)
+INFO  time: compiled root in 0.18s
+ERROR 'root' failed to compile.
+INFO  compiling root (2 scala sources)
+INFO  time: compiled root in 0.15s
+ERROR 'root' failed to compile.
+INFO  compiling root (1 scala source)
+INFO  time: compiled root in 1.79s
+INFO  compiling root (1 scala source)
+INFO  time: compiled root in 1.9s
+INFO  compiling root (2 scala sources)
+INFO  time: compiled root in 1.13s
