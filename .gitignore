@@ -1,5 +1,4 @@
-*.class
-.idea*
-*target/*
-.bloop/*
-.metals*
+.idea
+target
+project/target
+.DS_Store

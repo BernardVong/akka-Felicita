@@ -1,0 +1,29 @@
+The server is listening for incoming connections at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp6415323843313160478/-1br4mmnsw3goh.socket...
+Accepted incoming BSP client connection at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp6415323843313160478/-1br4mmnsw3goh.socket
+request received: build/initialize
+BSP initialization handshake complete.
+dating.
+INFO  [info] Loading project definition from /Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/project
+INFO  [info] Updating ProjectRef(uri("file:/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/project/"), "root-4aibd-akka-project-build")...
+INFO  [info] Done updating.
+INFO  [success] Generated .bloop/root-4aibd-akka-project-build.json
+INFO  [success] Total time: 2 s, completed 30 mai 2019 15:55:54
+INFO  [info] Updating ProjectRef(uri("file:/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/project/"), "root-4aibd-akka-project-build")...
+INFO  [info] Done updating.
+INFO  [info] Loading settings for project root from build.sbt ...
+INFO  [info] Set current project to 4aibd-akka-project (in build file:/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/)
+INFO  [info] Set current project to 4aibd-akka-project (in build file:/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/)
+INFO  [info] semanticdb-scalac is enabled
+INFO  [info] Updating ...
+INFO  [info] Done updating.
+INFO  [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+INFO  [success] Generated .bloop/root-test.json
+INFO  [success] Generated .bloop/root.json
+INFO  [success] Total time: 1 s, completed 30 mai 2019 15:56:01
+INFO  sbt exit: 0
+INFO  time: ran 'sbt bloopInstall' in 21s
+INFO  running embedded 'bloop bsp --protocol local --socket /var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp6415323843313160478/-1br4mmnsw3goh.socket'
+INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/manitraranaivoharison/Library/Caches/org.scalameta.metals/bsp.trace.json
+INFO  time: connected to build server in 3.28s
+INFO  time: imported build in 0.13s
+INFO  time: indexed workspace in 2.79s
