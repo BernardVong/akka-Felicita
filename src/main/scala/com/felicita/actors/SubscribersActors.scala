@@ -23,9 +23,9 @@ class SubscribersActors extends Actor with ActorLogging  {
       println("getSubs")
     case CreateSubscriber(sub) =>
       println("createSub")
-    case GetSubscriber(name) =>
+    case GetSubscriber(pseudo) =>
       println("getSub")
-    case DeleteSubscriber(name) =>
+    case DeleteSubscriber(pseudo) =>
       println("deleteSub")
   }
 }

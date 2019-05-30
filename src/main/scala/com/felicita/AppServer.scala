@@ -16,7 +16,7 @@ import scala.util.{Failure, Success}
 
 object AppServer extends App with SubscribersRoutes {
 
-  implicit val system = ActorSystem("onfire-system")
+  implicit val system = ActorSystem("felicita-system")
   implicit val materializer = ActorMaterializer()
   implicit val executionContext = system.dispatcher
 

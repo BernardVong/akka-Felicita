@@ -28,6 +28,16 @@ trait SubscribersRoutes {
             complete(StatusCodes.OK)
           }
         )
+      },
+      path(Segment) { pseudo =>
+        concat(
+          get {
+            complete(200 -> "get " + pseudo)
+          },
+          delete {
+            complete(200 -> "delete " + pseudo)
+          }
+        )
       }
     )
   }
