@@ -1,0 +1,6 @@
+#FileLock
+#Thu May 30 11:02:20 CEST 2019
+hostName=10.10.118.184
+id=16b07f9cfe4618fc0c25e90d23dcabcb9902bb920a3
+method=file
+server=10.10.118.184\:53086

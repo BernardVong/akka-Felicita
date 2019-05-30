@@ -1,0 +1,34 @@
+The server is listening for incoming connections at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp2845798610965373906/jg2ql2hc3ca0.socket...
+Accepted incoming BSP client connection at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp2845798610965373906/jg2ql2hc3ca0.socket
+request received: build/initialize
+BSP initialization handshake complete.
+r lock on /Users/manitraranaivoharison/.ivy2/.sbt.ivy.lock to be available...
+INFO  [info] Done updating.
+INFO  [info] Loading project definition from /Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/project
+INFO  [info] Updating ProjectRef(uri("file:/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/project/"), "root-4aibd-akka-project-build")...
+ERROR Waiting for lock on /Users/manitraranaivoharison/.ivy2/.sbt.ivy.lock to be available...
+INFO  [info] Done updating.
+INFO  [success] Generated .bloop/root-4aibd-akka-project-build.json
+INFO  [success] Total time: 3 s, completed 30 mai 2019 11:02:39
+INFO  [info] Updating ProjectRef(uri("file:/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/project/"), "root-4aibd-akka-project-build")...
+INFO  [info] Done updating.
+INFO  [info] Loading settings for project root-4aibd-akka-project from build.sbt ...
+INFO  [info] Set current project to 4aibd-akka-project (in build file:/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/)
+INFO  [info] Set current project to 4aibd-akka-project (in build file:/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/)
+INFO  [info] semanticdb-scalac is enabled
+INFO  [info] Updating ...
+INFO  [info] downloading https://repo1.maven.org/maven2/org/scalameta/semanticdb-scalac_2.12.8/4.1.9/semanticdb-scalac_2.12.8-4.1.9.jar ...
+INFO  [info] 	[SUCCESSFUL ] org.scalameta#semanticdb-scalac_2.12.8;4.1.9!semanticdb-scalac_2.12.8.jar (10297ms)
+INFO  [info] Done updating.
+INFO  [info] downloading https://repo1.maven.org/maven2/org/scalameta/semanticdb-scalac_2.12.8/4.1.9/semanticdb-scalac_2.12.8-4.1.9-sources.jar ...
+INFO  [info] 	[SUCCESSFUL ] org.scalameta#semanticdb-scalac_2.12.8;4.1.9!semanticdb-scalac_2.12.8.jar(src) (33ms)
+INFO  [success] Generated .bloop/root-4aibd-akka-project-test.json
+INFO  [success] Generated .bloop/root-4aibd-akka-project.json
+INFO  [success] Total time: 12 s, completed 30 mai 2019 11:02:56
+INFO  sbt exit: 0
+INFO  time: ran 'sbt bloopInstall' in 34s
+INFO  running embedded 'bloop bsp --protocol local --socket /var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp2845798610965373906/jg2ql2hc3ca0.socket'
+INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/manitraranaivoharison/Library/Caches/org.scalameta.metals/bsp.trace.json
+INFO  time: connected to build server in 4.37s
+INFO  time: imported build in 0.11s
+INFO  time: indexed workspace in 2.32s
