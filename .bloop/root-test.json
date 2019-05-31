@@ -32,7 +32,13 @@
             "/Users/manitraranaivoharison/.ivy2/cache/com.typesafe.akka/akka-protobuf_2.12/jars/akka-protobuf_2.12-2.6.0-M2.jar",
             "/Users/manitraranaivoharison/.ivy2/cache/org.reactivestreams/reactive-streams/jars/reactive-streams-1.0.2.jar",
             "/Users/manitraranaivoharison/.ivy2/cache/com.typesafe/ssl-config-core_2.12/bundles/ssl-config-core_2.12-0.3.7.jar",
-            "/Users/manitraranaivoharison/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.1.1.jar"
+            "/Users/manitraranaivoharison/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.1.1.jar",
+            "/Users/manitraranaivoharison/.ivy2/cache/com.typesafe.akka/akka-http-testkit_2.12/jars/akka-http-testkit_2.12-10.1.8.jar",
+            "/Users/manitraranaivoharison/.ivy2/cache/com.typesafe.akka/akka-testkit_2.12/jars/akka-testkit_2.12-2.6.0-M2.jar",
+            "/Users/manitraranaivoharison/.ivy2/cache/com.typesafe.akka/akka-stream-testkit_2.12/jars/akka-stream-testkit_2.12-2.6.0-M2.jar",
+            "/Users/manitraranaivoharison/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.5.jar",
+            "/Users/manitraranaivoharison/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.5.jar",
+            "/Users/manitraranaivoharison/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.12.8.jar"
         ],
         "out" : "/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/.bloop/root",
         "classesDir" : "/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/.bloop/root/scala-2.12/test-classes",
@@ -422,6 +428,102 @@
                             "name" : "scala-parser-combinators_2.12",
                             "classifier" : "sources",
                             "path" : "/Users/manitraranaivoharison/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/srcs/scala-parser-combinators_2.12-1.1.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "com.typesafe.akka",
+                    "name" : "akka-http-testkit_2.12",
+                    "version" : "10.1.8",
+                    "artifacts" : [
+                        {
+                            "name" : "akka-http-testkit_2.12",
+                            "path" : "/Users/manitraranaivoharison/.ivy2/cache/com.typesafe.akka/akka-http-testkit_2.12/jars/akka-http-testkit_2.12-10.1.8.jar"
+                        },
+                        {
+                            "name" : "akka-http-testkit_2.12",
+                            "classifier" : "sources",
+                            "path" : "/Users/manitraranaivoharison/.ivy2/cache/com.typesafe.akka/akka-http-testkit_2.12/srcs/akka-http-testkit_2.12-10.1.8-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "com.typesafe.akka",
+                    "name" : "akka-testkit_2.12",
+                    "version" : "2.6.0-M2",
+                    "artifacts" : [
+                        {
+                            "name" : "akka-testkit_2.12",
+                            "path" : "/Users/manitraranaivoharison/.ivy2/cache/com.typesafe.akka/akka-testkit_2.12/jars/akka-testkit_2.12-2.6.0-M2.jar"
+                        },
+                        {
+                            "name" : "akka-testkit_2.12",
+                            "classifier" : "sources",
+                            "path" : "/Users/manitraranaivoharison/.ivy2/cache/com.typesafe.akka/akka-testkit_2.12/srcs/akka-testkit_2.12-2.6.0-M2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "com.typesafe.akka",
+                    "name" : "akka-stream-testkit_2.12",
+                    "version" : "2.6.0-M2",
+                    "artifacts" : [
+                        {
+                            "name" : "akka-stream-testkit_2.12",
+                            "path" : "/Users/manitraranaivoharison/.ivy2/cache/com.typesafe.akka/akka-stream-testkit_2.12/jars/akka-stream-testkit_2.12-2.6.0-M2.jar"
+                        },
+                        {
+                            "name" : "akka-stream-testkit_2.12",
+                            "classifier" : "sources",
+                            "path" : "/Users/manitraranaivoharison/.ivy2/cache/com.typesafe.akka/akka-stream-testkit_2.12/srcs/akka-stream-testkit_2.12-2.6.0-M2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.scalatest",
+                    "name" : "scalatest_2.12",
+                    "version" : "3.0.5",
+                    "artifacts" : [
+                        {
+                            "name" : "scalatest_2.12",
+                            "path" : "/Users/manitraranaivoharison/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.5.jar"
+                        },
+                        {
+                            "name" : "scalatest_2.12",
+                            "classifier" : "sources",
+                            "path" : "/Users/manitraranaivoharison/.ivy2/cache/org.scalatest/scalatest_2.12/srcs/scalatest_2.12-3.0.5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.scalactic",
+                    "name" : "scalactic_2.12",
+                    "version" : "3.0.5",
+                    "artifacts" : [
+                        {
+                            "name" : "scalactic_2.12",
+                            "path" : "/Users/manitraranaivoharison/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.5.jar"
+                        },
+                        {
+                            "name" : "scalactic_2.12",
+                            "classifier" : "sources",
+                            "path" : "/Users/manitraranaivoharison/.ivy2/cache/org.scalactic/scalactic_2.12/srcs/scalactic_2.12-3.0.5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.scala-lang",
+                    "name" : "scala-reflect",
+                    "version" : "2.12.8",
+                    "artifacts" : [
+                        {
+                            "name" : "scala-reflect",
+                            "path" : "/Users/manitraranaivoharison/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.12.8.jar"
+                        },
+                        {
+                            "name" : "scala-reflect",
+                            "classifier" : "sources",
+                            "path" : "/Users/manitraranaivoharison/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.12.8-sources.jar"
                         }
                     ]
                 }

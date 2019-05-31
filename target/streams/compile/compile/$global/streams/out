@@ -1,7 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/com/felicita/JsonSupport.scala:3:21: object actors is not a member of package com.felicita[0m
-[0m[[0m[31merror[0m] [0m[0mimport com.felicita.actors.UserRegistryActor.ActionPerformed[0m
-[0m[[0m[31merror[0m] [0m[0m                    ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/com/felicita/JsonSupport.scala:16:56: not found: value ActionPerformed[0m
-[0m[[0m[31merror[0m] [0m[0m  implicit val actionPerformedJsonFormat = jsonFormat1(ActionPerformed)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                       ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/com/felicita/WebServer.scala:57:72: not found: value routes[0m
+[0m[[0m[31merror[0m] [0m[0m  val serverBinding: Future[Http.ServerBinding] = Http().bindAndHandle(routes, "localhost", 8080)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

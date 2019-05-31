@@ -1,4 +1,6 @@
 .idea
 target
-project/target
+project/target/*
+target/streams/*
 .DS_Store
+.bloop/*
