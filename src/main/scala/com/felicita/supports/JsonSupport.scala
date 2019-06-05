@@ -1,6 +1,6 @@
 package com.felicita
 
-import com.felicita.UserRegistryActor.ActionPerformed
+import com.felicita.SubscriberRegistryActor.ActionPerformed
 
 //#json-support
 import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
@@ -10,8 +10,8 @@ trait JsonSupport extends SprayJsonSupport {
   // import the default encoders for primitive types (Int, String, Lists etc)
   import DefaultJsonProtocol._
 
-  implicit val userJsonFormat = jsonFormat3(User)
-  implicit val usersJsonFormat = jsonFormat1(Users)
+  implicit val subscriberJsonFormat = jsonFormat4(Subscriber)
+  implicit val subscribersJsonFormat = jsonFormat1(Subscribers)
 
   implicit val actionPerformedJsonFormat = jsonFormat1(ActionPerformed)
 }

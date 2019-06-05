@@ -43,8 +43,8 @@ object FromMap extends LowPriorityFromMap {
 
   class ConvertHelper[A] {
     def from[R <: HList](m: Map[String, Any])(implicit
-                                            gen: LabelledGeneric.Aux[A, R],
-                                            fromMap: FromMap[R]
+                                              gen: LabelledGeneric.Aux[A, R],
+                                              fromMap: FromMap[R]
     ): Option[A] = fromMap(m).map(gen.from(_))
   }
 
