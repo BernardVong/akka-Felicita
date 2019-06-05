@@ -4,5 +4,5 @@
 
 Go to the terminal and move in resources folder to generate database from commands lines SQLlite: 
 ```
-sqlite3 src/main/resources/felicita.db < src/main/resources/create_all_table.sql
+sqlite3 resources/database/felicita.db < resources/database/create_all_table.sql
 ```

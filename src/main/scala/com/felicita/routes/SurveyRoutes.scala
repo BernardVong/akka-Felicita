@@ -27,8 +27,7 @@ trait SurveyRoutes extends JsonSupport {
 
   def surveyRegistryActor: ActorRef
 
-
-  implicit lazy val timeout = Timeout(5.seconds)
+  implicit lazy val timeout: Timeout = Timeout(5.seconds)
 
   lazy val surveyRoutes: Route =
     pathPrefix( "surveys") {
