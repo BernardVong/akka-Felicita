@@ -14,31 +14,31 @@ import akka.http.scaladsl.server.directives.RouteDirectives.complete
 import akka.http.scaladsl.server.directives.PathDirectives.path
 
 import scala.concurrent.Future
-import com.felicita.actors.SubscriberRegistryActor._
+import com.felicita.actors.SurveyRegistryActor._
 import com.felicita.supports.JsonSupport
 import akka.util.Timeout
 import akka.pattern.ask
 
-trait SubscriberRoutes extends JsonSupport {
+trait SurveyRoutes extends JsonSupport {
 
   implicit def system: ActorSystem
 
-  lazy val log = Logging(system, classOf[SubscriberRoutes])
+  lazy val log = Logging(system, classOf[SurveyRoutes])
 
-  def subscriberRegistryActor: ActorRef
+  def surveyRegistryActor: ActorRef
 
 
   implicit lazy val timeout = Timeout(5.seconds)
 
-  lazy val subscriberRoutes: Route =
-    pathPrefix( "subscribers") {
+  lazy val surveyRoutes: Route =
+    pathPrefix( "surveys") {
       concat(
         pathEnd {
           concat(
             get {
-              val subscribers: Future[Subscribers] =
-                (subscriberRegistryActor ? GetSubscribers).mapTo[Subscribers]
-              complete(subscribers)
+              val surveys: Future[Surveys] =
+                (surveyRegistryActor ? GetSurveys).mapTo[Surveys]
+              complete(surveys)
             })
         })
     }

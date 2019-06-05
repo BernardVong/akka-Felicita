@@ -16,17 +16,22 @@ import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
 import spray.json.DefaultJsonProtocol._
 import utils.SQLiteHelpers
 import utils.FromMap.to
+import com.felicita.routes.SubscriberRoutes
+import com.felicita.routes.SurveyRoutes
+import com.felicita.actors.SubscriberRegistryActor
+import com.felicita.actors.SurveyRegistryActor
 
-object WebServer extends App with SubscriberRoutes {
+object WebServer extends App with SubscriberRoutes with SurveyRoutes {
 
   implicit val system: ActorSystem = ActorSystem("FelicitaAkkaHttpServer")
   implicit val materializer: ActorMaterializer = ActorMaterializer()
   implicit val executionContext: ExecutionContext = system.dispatcher
 
 
-  val subscriberRegistryActor: ActorRef = system.actorOf(SubscriberRegistryActor.props, "userRegistryActor")
+  val subscriberRegistryActor: ActorRef = system.actorOf(SubscriberRegistryActor.props, "subscriberRegistryActor")
+  val surveyRegistryActor: ActorRef = system.actorOf(SurveyRegistryActor.props, "surveyRegistryActor")
 
-lazy val routes: Route = subscriberRoutes
+  lazy val routes: Route = subscriberRoutes
 
   val serverBinding: Future[Http.ServerBinding] = Http().bindAndHandle(routes, "localhost", 8080)
 

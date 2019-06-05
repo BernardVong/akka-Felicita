@@ -1,18 +1,19 @@
-package com.felicita
+package com.felicita.supports
 
-import com.felicita.SubscriberRegistryActor.ActionPerformed
+import com.felicita.actors.SubscriberRegistryActor._
+import com.felicita.actors.SurveyRegistryActor._
+import spray.json.RootJsonFormat
 
 //#json-support
 import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
 import spray.json.DefaultJsonProtocol
 
 trait JsonSupport extends SprayJsonSupport {
-  // import the default encoders for primitive types (Int, String, Lists etc)
   import DefaultJsonProtocol._
 
-  implicit val subscriberJsonFormat = jsonFormat4(Subscriber)
-  implicit val subscribersJsonFormat = jsonFormat1(Subscribers)
+  implicit val subscriberJsonFormat: RootJsonFormat[Subscriber] = jsonFormat4(Subscriber)
+  implicit val subscribersJsonFormat: RootJsonFormat[Subscribers] = jsonFormat1(Subscribers)
 
-  implicit val actionPerformedJsonFormat = jsonFormat1(ActionPerformed)
+  implicit val surveyJsonFormat: RootJsonFormat[Survey] = jsonFormat2(Survey)
+  implicit val surveysJsonFormat: RootJsonFormat[Surveys] = jsonFormat1(Surveys)
 }
-//#json-support

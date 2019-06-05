@@ -5,3 +5,4 @@ target/streams/*
 .DS_Store
 .bloop/*
 .metals/*
+.idea*
