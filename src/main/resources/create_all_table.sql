@@ -1,33 +1,38 @@
 CREATE TABLE subscriber (
-    subscriber_key varchar(30) primary key,
+    id varchar(30) primary key,
     first_name text,
-    last_name text
+    last_name text,
+    pseudo text
 );
-INSERT INTO subscriber(f1,f2,F3) VALUES ('243KJF9','Pierre','Simon');
-INSERT INTO subscriber(f1,f2,F3) VALUES ('9282JHS','Paul','Trois');
-INSERT INTO subscriber(f1,f2,F3) VALUES ('2SJF92L','Jacque','Gaudefroy');
-INSERT INTO subscriber(f1,f2,F3) VALUES ('DJF92SA','William','Sheakspear');
+INSERT INTO subscriber(id,first_name,last_name,pseudo) VALUES ('1','Pierre','Simon','psim');
+INSERT INTO subscriber(id,first_name,last_name,pseudo) VALUES ('2','Paul','Trois','polo');
+INSERT INTO subscriber(id,first_name,last_name,pseudo) VALUES ('3','Jacque','Gaudefroy','jacouille');
+INSERT INTO subscriber(id,first_name,last_name,pseudo) VALUES ('4','William','Sheakspear','serein');
 
-CREATE TABLE donator (
-    donator_key varchar(30) primary key,
-    first_name text,
-    last_name text
+CREATE TABLE donations(
+    id varchar(30) primary key,
+    subscriber_id varchar(30),
+    amount float
 );
-INSERT INTO donateurs(f1,f2,F3) VALUES ('243KJF9','Pierre','Simon');
-
+INSERT INTO donations(id,subscriber_id,amount) VALUES ('243KJF9','1','10');
 
 CREATE TABLE giveaway (
-    giveaway_name varchar(30) primary key,
-    description_giveways text
+    id varchar(30) primary key,
+    description_giveaway text
+);
+
+CREATE TABLE giveaway_subscriber (
+    id varchar(30) primary key,
+    giveaway_id varchar(30),
+    subscriber_id varchar(30)
 );
 
 CREATE TABLE blacklist (
-    giveaway_name varchar(30),
-    subscriber_key varchar(30)
+    id varchar(30) primary key,
+    subscriber_id varchar(30)
 );
 
-CREATE TABLE sondages (
-    giveaways_name varchar(30),
-    subscriber_key varchar(30),
-    result_sondages varchar(30)
+CREATE TABLE survey (
+    id varchar(30) primary key, 
+    total_response_0 int
 );

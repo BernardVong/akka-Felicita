@@ -1,8 +1,14 @@
-The server is listening for incoming connections at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp4532641386472684706/12te0vwomfwer.socket...
-Accepted incoming BSP client connection at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp4532641386472684706/12te0vwomfwer.socket
+The server is listening for incoming connections at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp416234266886099762/-1cl29zqkn6edf.socket...
+Accepted incoming BSP client connection at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp416234266886099762/-1cl29zqkn6edf.socket
 request received: build/initialize
 BSP initialization handshake complete.
 and outgoing JSON messages create an empty file at /Users/manitraranaivoharison/Library/Caches/org.scalameta.metals/bsp.trace.json
-INFO  time: connected to build server in 4.92s
-INFO  time: imported build in 0.15s
-INFO  time: indexed workspace in 1.8s
+INFO  time: connected to build server in 4.32s
+INFO  time: imported build in 0.23s
+INFO  compiling root (6 scala sources)
+INFO  time: indexed workspace in 2.02s
+INFO  compiling root (6 scala sources)
+INFO  time: compiled root in 10s
+INFO  time: compiled root in 10s
+INFO  compiling root (1 scala source)
+INFO  time: compiled root in 2.69s

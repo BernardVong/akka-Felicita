@@ -43,7 +43,7 @@ object WebServer extends App with UserRoutes {
   val route: Route =
       get {
         pathPrefix("col") {
-          val req = SQLiteHelpers.request(url, "SELECT * FROM table_test", Seq("key"))
+          val req = SQLiteHelpers.request(url, "SELECT * FROM user", Seq("key"))
           req match {
             case Some(r) => val values = r.flatMap(v => to[Key].from(v))
               complete(values)
