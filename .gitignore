@@ -1,5 +1,4 @@
 target
 project/target
 .idea
-*.DS_STORE
-
+*.DS_Store

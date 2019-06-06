@@ -1,6 +1,8 @@
 package com.felicita.routes
 
 
+import akka.actor.{ActorRef, ActorSystem}
+import akka.event.Logging
 import akka.http.scaladsl.server.Route
 
 import scala.concurrent.duration._
@@ -12,9 +14,24 @@ import akka.http.scaladsl.server.directives.MethodDirectives.get
 import akka.http.scaladsl.server.directives.MethodDirectives.post
 import akka.http.scaladsl.server.directives.RouteDirectives.complete
 import akka.http.scaladsl.server.directives.PathDirectives.path
+import com.felicita.actors.SubscribersActors._
+import akka.util.Timeout
+
+import scala.concurrent.Future
+import akka.pattern.ask
+import com.felicita.actors._
+import com.felicita.supports.JsonSupport
 
 
-trait SubscribersRoutes {
+trait SubscribersRoutes extends JsonSupport {
+
+  implicit lazy val timeout = Timeout(5.seconds)
+  implicit def system: ActorSystem
+  def subscriberActor: ActorRef
+
+  lazy val log = Logging(system, classOf[SubscribersRoutes])
+
+
 
   lazy val subscribersRoutes: Route =
   pathPrefix("subscribers") {
@@ -22,17 +39,25 @@ trait SubscribersRoutes {
       pathEnd {
         concat(
           get {
-            complete(StatusCodes.OK)
+            val subscribers: Future[Subscribers] = (subscriberActor ? GetSubscribers).mapTo[Subscribers]
+            complete(subscribers)
           },
           post {
-            complete(StatusCodes.OK)
+            entity(as[Subscriber]) { subscriber =>
+              val subscriberCreated: Future[ActionPerformed] = (subscriberActor ? CreateSubscriber(subscriber)).mapTo[ActionPerformed]
+              onSuccess(subscriberCreated) { performed =>
+                log.info("Added subsriber [{}]: {}", subscriber.pseudo, performed.description)
+                complete((StatusCodes.Created, performed))
+              }
+            }
           }
         )
       },
       path(Segment) { pseudo =>
         concat(
           get {
-            complete(200 -> "get " + pseudo)
+            val subscriber: Future[Subscriber] = (subscriberActor ? GetSubscriber(pseudo)).mapTo[Subscriber]
+            complete(subscriber)
           },
           delete {
             complete(200 -> "delete " + pseudo)
