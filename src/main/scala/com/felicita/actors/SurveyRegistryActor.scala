@@ -34,8 +34,8 @@ class SurveyRegistryActor extends Actor with ActorLogging {
     case GetSurveys =>
       val url = database.envOrElseConfig("url")
       println(s"My secret value is $url")
-      val req = SQLiteHelpers.request(url, "SELECT * FROM survey", Seq("id", "total_response_0"))
-      req match {
+      val request = SQLiteHelpers.request(url, "SELECT * FROM survey", Seq("id", "total_response_0"))
+      request match {
         case Some(r) => val values = r.flatMap(s => to[Survey].from(s))
           sender() ! Surveys(values)
         case None => complete("mauvaise table")
@@ -45,7 +45,7 @@ class SurveyRegistryActor extends Actor with ActorLogging {
       val url = database.envOrElseConfig("url")
       println(s"My secret value is $url")
       val query = s"INSERT INTO survey(id,total_response_0) VALUES (${survey.id},${survey.total_response_0})"
-      val req = SQLiteHelpers.request(url, query, Seq("id", "total_response_0"))
+      val request = SQLiteHelpers.request(url, query, Seq("id", "total_response_0"))
       sender() ! ActionPerformed(s"Survey (${survey.id} ${survey.total_response_0})  created.")
   }
 }
