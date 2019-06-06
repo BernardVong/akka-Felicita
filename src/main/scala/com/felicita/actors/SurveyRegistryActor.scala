@@ -9,7 +9,7 @@ import scala.util.Properties
 
 object SurveyRegistryActor {
 
-  final case class Survey(id: String, total_response_0: Float)
+  final case class Survey(id: String, total_response_0: Double)
 
   final case class Surveys(surveys: Vector[Survey])
 
@@ -22,8 +22,6 @@ class SurveyRegistryActor extends Actor with ActorLogging {
 
   import SurveyRegistryActor._
 
-  var subscribers = Set.empty[Survey]
-
   val database = new Database()
 
   def receive: Receive = {
@@ -32,9 +30,10 @@ class SurveyRegistryActor extends Actor with ActorLogging {
       val url = database.envOrElseConfig("url")
       println(s"My secret value is $url")
       val req = SQLiteHelpers.request(url, "SELECT * FROM survey", Seq("id", "total_response_0"))
-      print(req)
+      //print(req)
       req match {
         case Some(r) => val values = r.flatMap(s => to[Survey].from(s))
+          print(values)
           sender() ! Surveys(values)
         case None => complete("mauvaise table")
       }

@@ -24,7 +24,7 @@ import com.felicita.actors.SubscriberRegistryActor
 import com.felicita.actors.SurveyRegistryActor
 import scala.concurrent.duration._
 
-object WebServer extends App with SubscriberRoutes with SurveyRoutes {
+object WebServer extends App with SurveyRoutes  with SubscriberRoutes{
 
   override lazy val log = Logging(system, classOf)
   override implicit lazy val timeout: Timeout = Timeout(5.seconds)
@@ -33,8 +33,8 @@ object WebServer extends App with SubscriberRoutes with SurveyRoutes {
   implicit val materializer: ActorMaterializer = ActorMaterializer()
   implicit val executionContext: ExecutionContext = system.dispatcher
 
-  val subscriberRegistryActor: ActorRef = system.actorOf(SubscriberRegistryActor.props, "subscriberRegistryActor")
   val surveyRegistryActor: ActorRef = system.actorOf(SurveyRegistryActor.props, "surveyRegistryActor")
+  val subscriberRegistryActor: ActorRef = system.actorOf(SubscriberRegistryActor.props, "subscriberRegistryActor")
 
   object MainRouter {
     lazy val routes: Route =  surveyRoutes ~ subscriberRoutes

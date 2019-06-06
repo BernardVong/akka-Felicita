@@ -29,8 +29,6 @@ class SubscriberRegistryActor extends Actor with ActorLogging {
 
   import SubscriberRegistryActor._
 
-  var subscribers = Set.empty[Subscriber]
-
   val database = new Database()
 
   def receive: Receive = {
