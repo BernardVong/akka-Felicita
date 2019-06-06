@@ -19,8 +19,8 @@ import akka.util.Timeout
 
 import scala.concurrent.Future
 import akka.pattern.ask
+import com.felicita._utils.JsonSupport
 import com.felicita.actors._
-import com.felicita.supports.JsonSupport
 
 
 trait SubscribersRoutes extends JsonSupport {
