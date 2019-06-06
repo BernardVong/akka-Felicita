@@ -45,7 +45,6 @@ class SurveyRegistryActor extends Actor with ActorLogging {
       val url = database.envOrElseConfig("url")
       println(s"My secret value is $url")
       val query = s"INSERT INTO survey(id,total_response_0) VALUES (${survey.id},${survey.total_response_0})"
-      print(query)
       val req = SQLiteHelpers.request(url, query, Seq("id", "total_response_0"))
       sender() ! ActionPerformed(s"Survey (${survey.id} ${survey.total_response_0})  created.")
   }

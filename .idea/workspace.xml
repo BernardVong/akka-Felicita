@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="888d61d9-0c74-4eea-8e08-55d3070ad150" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/database/felicita.db" beforeDir="false" afterPath="$PROJECT_DIR$/resources/database/felicita.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/felicita/actors/SurveyRegistryActor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/felicita/actors/SurveyRegistryActor.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -77,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/actors/SurveyRegistryActor.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+            <state relative-caret-position="276">
+              <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
               <folding>
                 <element signature="e#29#75#0" expanded="true" />
               </folding>
@@ -451,12 +450,12 @@
       <workItem from="1559737190137" duration="3354000" />
       <workItem from="1559746443052" duration="1302000" />
       <workItem from="1559758137912" duration="5626000" />
-      <workItem from="1559802268381" duration="8607000" />
+      <workItem from="1559802268381" duration="8700000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24540000" />
+    <option name="totallyTimeSpent" value="24633000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -761,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/actors/SurveyRegistryActor.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+        <state relative-caret-position="276">
+          <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
           <folding>
             <element signature="e#29#75#0" expanded="true" />
           </folding>
