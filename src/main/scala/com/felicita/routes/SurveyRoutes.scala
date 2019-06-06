@@ -38,7 +38,17 @@ trait SurveyRoutes extends JsonSupport {
               val surveys: Future[Surveys] =
                 (surveyRegistryActor ? GetSurveys).mapTo[Surveys]
               complete(surveys)
-            })
+            },
+            post {
+              entity(as[Survey]) { survey =>
+                val surveyCreated: Future[ActionPerformed] =
+                  (surveyRegistryActor ? CreateSurvey(survey)).mapTo[ActionPerformed]
+                onSuccess(surveyCreated) { performed =>
+                  complete((StatusCodes.Created, performed))
+                }
+              }
+            }
+          )
         })
     }
 }
