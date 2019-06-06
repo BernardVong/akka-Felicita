@@ -14,32 +14,32 @@ import utils.SQLiteHelpers
 import utils.Database
 import utils.FromMap.to
 
-object SubscriberRegistryActor {
+object UserRegistryActor {
 
-  final case class Subscriber(id: String, first_name: String, last_name: String, pseudo: String)
+  final case class User(id: Int, first_name: String, last_name: String, pseudo: String, subscriber: Int, is_blacklist: Int)
 
-  final case class Subscribers(subscribers: Vector[Subscriber])
+  final case class Users(User: Vector[User])
 
-  final case object GetSubscribers
+  final case object GetUsers
 
-  def props: Props = Props[SubscriberRegistryActor]
+  def props: Props = Props[UserRegistryActor]
 }
 
-class SubscriberRegistryActor extends Actor with ActorLogging {
+class UserRegistryActor extends Actor with ActorLogging {
 
-  import SubscriberRegistryActor._
+  import UserRegistryActor._
 
   val database = new Database()
 
   def receive: Receive = {
 
-    case GetSubscribers =>
+    case GetUsers =>
       val url = database.envOrElseConfig("url")
       println(s"My secret value is $url")
-      val req = SQLiteHelpers.request(url, "SELECT * FROM subscriber", Seq("id", "first_name", "last_name", "pseudo"))
+      val req = SQLiteHelpers.request(url, "SELECT * FROM users", Seq("id","first_name", "last_name", "pseudo", "subscriber", "is_blacklist"))
       req match {
-        case Some(r) => val values = r.flatMap(s => to[Subscriber].from(s))
-          sender() ! Subscribers(values)
+        case Some(r) => val values = r.flatMap(s => to[User].from(s))
+          sender() ! Users(values)
         case None => complete("mauvaise table")
       }
   }

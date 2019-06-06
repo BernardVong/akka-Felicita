@@ -27,14 +27,13 @@ class SurveyRegistryActor extends Actor with ActorLogging {
   import SurveyRegistryActor._
 
   val database = new Database()
-  var surveys = Set.empty[Survey]
 
   def receive: Receive = {
 
     case GetSurveys =>
       val url = database.envOrElseConfig("url")
       println(s"My secret value is $url")
-      val request = SQLiteHelpers.request(url, "SELECT * FROM survey", Seq("id", "total_response_0"))
+      val request = SQLiteHelpers.request(url, "SELECT * FROM surveys", Seq("id", "total_response_0"))
       request match {
         case Some(r) => val values = r.flatMap(s => to[Survey].from(s))
           sender() ! Surveys(values)

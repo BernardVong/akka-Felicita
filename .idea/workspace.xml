@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="888d61d9-0c74-4eea-8e08-55d3070ad150" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/database/create_all_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/database/create_all_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/database/felicita.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/felicita/WebServer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/felicita/WebServer.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/felicita/actors/SubscriberRegistryActor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/felicita/actors/UserRegistryActor.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/felicita/actors/SurveyRegistryActor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/felicita/actors/SurveyRegistryActor.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/felicita/routes/SubscriberRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/felicita/routes/UserRoutes.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/felicita/supports/JsonSupport.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/felicita/supports/JsonSupport.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,7 +53,7 @@
         <item name="felicita" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="survey: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="surveys: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -63,12 +69,36 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/WebServer.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="36" column="23" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="23" />
+              <folding>
+                <element signature="e#44#101#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/routes/UserRoutes.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="502">
+              <caret line="31" column="21" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="21" />
+              <folding>
+                <element signature="e#29#72#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/supports/JsonSupport.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            <state relative-caret-position="294">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
               <folding>
-                <element signature="e#31#83#0" expanded="true" />
+                <element signature="e#31#77#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,8 +107,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/actors/SurveyRegistryActor.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="232">
+              <caret line="35" column="69" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="69" />
               <folding>
                 <element signature="e#29#75#0" expanded="true" />
               </folding>
@@ -86,32 +116,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/utils/Database.scala">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/actors/UserRegistryActor.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+            <state relative-caret-position="710">
+              <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
               <folding>
-                <element signature="e#15#55#0" expanded="true" />
+                <element signature="e#52#92#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="38" selection-start-column="38" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/database/create_all_table.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="647">
+              <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -120,8 +141,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="147">
-                <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+              <first_editor relative-caret-position="126">
+                <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="80" />
               </first_editor>
               <second_editor />
             </state>
@@ -129,41 +150,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://a7a3e088-de0b-41e1-af85-67d517b06164/schema/main/table/survey">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="e1443c07-25a1-4237-8f69-b1acda466473">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://a7a3e088-de0b-41e1-af85-67d517b06164/schema/main/table/subscriber">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="e1443c07-25a1-4237-8f69-b1acda466473">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.6.0-M2-sources.jar!/akka/dispatch/Mailbox.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="251" column="8" selection-start-line="251" selection-start-column="8" selection-end-line="251" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/routes/SurveyRoutes.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="50" column="11" lean-forward="true" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+            <state relative-caret-position="353">
+              <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
               <folding>
                 <element signature="e#29#72#0" expanded="true" />
               </folding>
@@ -172,6 +162,13 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Scala Object" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -186,7 +183,16 @@
       <find>Subscribers</find>
       <find>surveyRegistryActor</find>
       <find>subscriberRegistryActor</find>
+      <find>sub</find>
+      <find>Subscriber</find>
+      <find>subscribers</find>
     </findStrings>
+    <replaceStrings>
+      <replace>Users</replace>
+      <replace>User</replace>
+      <replace>UserRegistryActor</replace>
+      <replace>users</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -196,25 +202,26 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/scala/utils/SQLiteHelpers.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/utils/FromMap.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/felicita/routes/UserRoutes.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/felicita/actors/UserRegistryActor.scala" />
         <option value="$PROJECT_DIR$/src/main/resources/application.conf" />
         <option value="$PROJECT_DIR$/src/main/scala/com/felicita/config/MyConfig.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/utils/Database.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/felicita/routes/DatabaseRoutes.scala" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/felicita/routes/SurveyRoutes.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/felicita/routes/UserRegistryActor.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/felicita/actors/SubscriberRegistryActor.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/felicita/routes/SubscriberRoutes.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/felicita/WebServer.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/felicita/actors/SubscriberRegistryActor.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/felicita/routes/UserRoutes.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/felicita/actors/UserRegistryActor.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/felicita/supports/JsonSupport.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/felicita/routes/SurveyRoutes.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/felicita/actors/SurveyRegistryActor.scala" />
         <option value="$PROJECT_DIR$/resources/database/create_all_table.sql" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
@@ -451,18 +458,19 @@
       <workItem from="1559737190137" duration="3354000" />
       <workItem from="1559746443052" duration="1302000" />
       <workItem from="1559758137912" duration="5626000" />
-      <workItem from="1559802268381" duration="9443000" />
+      <workItem from="1559802268381" duration="10863000" />
+      <workItem from="1559844282233" duration="4504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25376000" />
+    <option name="totallyTimeSpent" value="31300000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26800978" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27106228" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -471,7 +479,7 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32870865" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32870865" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991462" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -484,7 +492,7 @@
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32870865" />
-      <window_info anchor="bottom" id="Database Changes" order="15" />
+      <window_info anchor="bottom" id="Database Changes" order="15" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -513,7 +521,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ddbe13df-02a1-4d40-9cf1-f196c876f3ec/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/routes/UserRoutes.scala" />
     <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.8-sources.jar!/scala/concurrent/Future.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1680">
@@ -556,26 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/WebServer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="e#44#101#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/actors/SubscriberRegistryActor.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="e#52#92#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -656,16 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/routes/SubscriberRoutes.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="38" column="40" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="40" />
-          <folding>
-            <element signature="e#29#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.6.0-M2-sources.jar!/akka/actor/Actor.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -704,22 +681,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/supports/JsonSupport.scala">
+    <entry file="das://a7a3e088-de0b-41e1-af85-67d517b06164/schema/main/table/subscriber" />
+    <entry file="das://a7a3e088-de0b-41e1-af85-67d517b06164/schema/main/table/survey" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/routes/UserRegistryActor.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        <state relative-caret-position="42">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/routes/UserRoutes.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="21" />
           <folding>
-            <element signature="e#31#83#0" expanded="true" />
+            <element signature="e#29#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://52592354-38a5-4ecc-aca8-55193e4d012a/schema/main/table/surveys">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="e32b5022-0ba5-4364-8db0-c1ff0f7550af">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/WebServer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="23" />
+          <folding>
+            <element signature="e#44#101#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/routes/SurveyRoutes.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="50" column="11" lean-forward="true" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+        <state relative-caret-position="353">
+          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
           <folding>
             <element signature="e#29#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/supports/JsonSupport.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#31#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/actors/SurveyRegistryActor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="35" column="69" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="69" />
+          <folding>
+            <element signature="e#29#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -727,45 +752,27 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="147">
-            <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <first_editor relative-caret-position="126">
+            <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="80" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="das://a7a3e088-de0b-41e1-af85-67d517b06164/schema/main/table/subscriber">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="e1443c07-25a1-4237-8f69-b1acda466473">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://a7a3e088-de0b-41e1-af85-67d517b06164/schema/main/table/survey">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="e1443c07-25a1-4237-8f69-b1acda466473">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/actors/SurveyRegistryActor.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#29#75#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/database/create_all_table.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="647">
+          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/actors/UserRegistryActor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+          <folding>
+            <element signature="e#52#92#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

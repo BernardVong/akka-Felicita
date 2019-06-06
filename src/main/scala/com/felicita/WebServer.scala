@@ -18,13 +18,13 @@ import akka.util.Timeout
 import spray.json.DefaultJsonProtocol._
 import utils.SQLiteHelpers
 import utils.FromMap.to
-import com.felicita.routes.SubscriberRoutes
+import com.felicita.routes.UserRoutes
 import com.felicita.routes.SurveyRoutes
-import com.felicita.actors.SubscriberRegistryActor
+import com.felicita.actors.UserRegistryActor
 import com.felicita.actors.SurveyRegistryActor
 import scala.concurrent.duration._
 
-object WebServer extends App with SurveyRoutes  with SubscriberRoutes{
+object WebServer extends App with SurveyRoutes  with UserRoutes{
 
   override lazy val log = Logging(system, classOf)
   override implicit lazy val timeout: Timeout = Timeout(5.seconds)
@@ -34,10 +34,10 @@ object WebServer extends App with SurveyRoutes  with SubscriberRoutes{
   implicit val executionContext: ExecutionContext = system.dispatcher
 
   val surveyRegistryActor: ActorRef = system.actorOf(SurveyRegistryActor.props, "surveyRegistryActor")
-  val subscriberRegistryActor: ActorRef = system.actorOf(SubscriberRegistryActor.props, "subscriberRegistryActor")
+  val userRegistryActor: ActorRef = system.actorOf(UserRegistryActor.props, "userRegistryActor")
 
   object MainRouter {
-    lazy val routes: Route =  surveyRoutes ~ subscriberRoutes
+    lazy val routes: Route =  surveyRoutes ~ userRoutes
   }
 
   val serverBinding: Future[Http.ServerBinding] = Http().bindAndHandle(MainRouter.routes, "localhost", 8080)
