@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="888d61d9-0c74-4eea-8e08-55d3070ad150" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/database/felicita.db" beforeDir="false" afterPath="$PROJECT_DIR$/resources/database/felicita.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/felicita/actors/UserRegistryActor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/felicita/actors/UserRegistryActor.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/felicita/routes/UserRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/felicita/routes/UserRoutes.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -139,8 +137,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/actors/UserRegistryActor.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="54" column="3" lean-forward="true" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+            <state relative-caret-position="367">
+              <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
               <folding>
                 <element signature="e#53#99#0" expanded="true" />
               </folding>
@@ -487,12 +485,12 @@
       <workItem from="1559894316544" duration="353000" />
       <workItem from="1559897163460" duration="48000" />
       <workItem from="1559898157982" duration="229000" />
-      <workItem from="1559899221933" duration="7851000" />
+      <workItem from="1559899221933" duration="8081000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40118000" />
+    <option name="totallyTimeSpent" value="40348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -507,7 +505,7 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32870865" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32870865" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991462" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -516,7 +514,7 @@
       <window_info anchor="bottom" id="SBT Console" order="8" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="9" />
       <window_info anchor="bottom" id="Database Console" order="10" weight="0.32870865" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32977587" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32977587" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32870865" />
@@ -830,15 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://83ec228f-44f2-40a5-b507-ecf6795c6812/schema/main/table/users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="b6f5dd36-d3b1-443f-a9d1-922a8ab30585">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/routes/UserRoutes.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
@@ -849,10 +838,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://83ec228f-44f2-40a5-b507-ecf6795c6812/schema/main/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="b6f5dd36-d3b1-443f-a9d1-922a8ab30585">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/felicita/actors/UserRegistryActor.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="54" column="3" lean-forward="true" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+        <state relative-caret-position="367">
+          <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
           <folding>
             <element signature="e#53#99#0" expanded="true" />
           </folding>

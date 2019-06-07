@@ -28,6 +28,7 @@ class UserRegistryActor extends Actor with ActorLogging {
 
   val database = new Database()
   val url: String = database.envOrElseConfig("url")
+  println(s"My secret value is $url")
 
   def receive: Receive = {
 
@@ -40,17 +41,20 @@ class UserRegistryActor extends Actor with ActorLogging {
         case None => complete("mauvaise table")
       }
     case SetBlacklist(pseudo: String) =>
-      println(s"My secret value is $url")
+      """
+        |pseudo(str):
+      """.stripMargin
       val query = s"UPDATE users SET is_blacklist = 1 WHERE pseudo like '$pseudo'"
-      print(query)
-      val request =  SQLiteHelpers.request(url,query , Seq("pseudo"))
+      SQLiteHelpers.request(url,query , Seq("pseudo"))
+
       sender() ! ActionPerformedUser(s"Users : ($pseudo) is blacklist")
 
     case UnsetBlacklist(pseudo: String) =>
-      println(s"My secret value is $url")
+      """
+        |pseudo(str):
+      """.stripMargin
       val query = s"UPDATE users SET is_blacklist = 0 WHERE pseudo like '$pseudo'"
-      print(query)
-      val request =  SQLiteHelpers.request(url,query , Seq("pseudo"))
+      SQLiteHelpers.request(url,query , Seq("pseudo"))
       sender() ! ActionPerformedUser(s"Users : ($pseudo) is not blacklist")
   }
 }
