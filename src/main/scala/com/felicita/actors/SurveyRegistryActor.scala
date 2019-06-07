@@ -7,7 +7,7 @@ import utils.{Database, SQLiteHelpers}
 
 object SurveyRegistryActor {
 
-  final case class Survey(id: String, total_response_0: Double)
+  final case class Survey(id: Option[Int], total_response_0: Double, user_id: Int)
 
   final case class Surveys(surveys: Vector[Survey])
 
@@ -29,9 +29,13 @@ class SurveyRegistryActor extends Actor with ActorLogging {
   def receive: Receive = {
 
     case GetSurveys =>
+      """
+        | Methods : Get
+        | Path : /surveys
+      """.stripMargin
       val url = database.envOrElseConfig("url")
       println(s"My secret value is $url")
-      val request = SQLiteHelpers.request(url, "SELECT * FROM surveys", Seq("id", "total_response_0"))
+      val request = SQLiteHelpers.request(url, "SELECT * FROM surveys", Seq("id", "total_response_0", "user_id"))
       request match {
         case Some(r) => val values = r.flatMap(s => to[Survey].from(s))
           sender() ! Surveys(values)
@@ -39,10 +43,15 @@ class SurveyRegistryActor extends Actor with ActorLogging {
       }
 
     case CreateSurvey(survey) =>
+      """
+        | Methods : Post
+        | Path : /surveys
+      """.stripMargin
       val url = database.envOrElseConfig("url")
       println(s"My secret value is $url")
-      val query = s"INSERT INTO survey(id,total_response_0) VALUES (${survey.id},${survey.total_response_0})"
-      val request = SQLiteHelpers.request(url, query, Seq("id", "total_response_0"))
-      sender() ! ActionPerformed(s"Survey (${survey.id} ${survey.total_response_0})  created.")
+      val query = s"INSERT INTO surveys(total_response_0,user_id) VALUES (${survey.total_response_0},${survey.user_id})"
+      print(query)
+      SQLiteHelpers.request(url, query, Seq("total_response_0", "user_id"))
+      sender() ! ActionPerformed(s"Survey add (${survey.total_response_0}) created for users_id is ${survey.user_id}")
   }
 }

@@ -33,6 +33,10 @@ class UserRegistryActor extends Actor with ActorLogging {
   def receive: Receive = {
 
     case GetUsers =>
+      """
+        |methods : Get
+        |Path : /users
+      """.stripMargin
       println(s"My secret value is $url")
       val req = SQLiteHelpers.request(url, "SELECT * FROM users", Seq("id","first_name", "last_name", "pseudo", "subscriber", "is_blacklist"))
       req match {
@@ -42,7 +46,8 @@ class UserRegistryActor extends Actor with ActorLogging {
       }
     case SetBlacklist(pseudo: String) =>
       """
-        |pseudo(str):
+        |methods : Patch
+        |Path : users/{pseudo}/set-blacklist
       """.stripMargin
       val query = s"UPDATE users SET is_blacklist = 1 WHERE pseudo like '$pseudo'"
       SQLiteHelpers.request(url,query , Seq("pseudo"))
@@ -51,7 +56,8 @@ class UserRegistryActor extends Actor with ActorLogging {
 
     case UnsetBlacklist(pseudo: String) =>
       """
-        |pseudo(str):
+        |
+        |Path : users/{pseudo}/unset-blacklist
       """.stripMargin
       val query = s"UPDATE users SET is_blacklist = 0 WHERE pseudo like '$pseudo'"
       SQLiteHelpers.request(url,query , Seq("pseudo"))
