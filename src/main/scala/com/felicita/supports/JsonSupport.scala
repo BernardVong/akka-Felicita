@@ -4,6 +4,7 @@ import com.felicita.actors.UserRegistryActor._
 import com.felicita.actors.SurveyRegistryActor._
 import spray.json.RootJsonFormat
 import com.felicita.actors.SurveyRegistryActor.ActionPerformed
+import com.felicita.actors.UserRegistryActor.ActionPerformedUser
 
 //#json-support
 import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
@@ -20,4 +21,5 @@ trait JsonSupport extends SprayJsonSupport {
   implicit val surveysJsonFormat: RootJsonFormat[Surveys] = jsonFormat1(Surveys)
 
   implicit val actionPerformedJsonFormat: RootJsonFormat[ActionPerformed] = jsonFormat1(ActionPerformed)
+  implicit val actionPerformedJsonFormatUser: RootJsonFormat[ActionPerformedUser] = jsonFormat1(ActionPerformedUser)
 }

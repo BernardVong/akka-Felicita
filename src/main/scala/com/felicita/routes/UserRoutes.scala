@@ -1,6 +1,6 @@
 package com.felicita.routes
 
-import akka.actor.{ ActorRef, ActorSystem }
+import akka.actor.{ActorRef, ActorSystem}
 import akka.event.Logging
 
 import scala.concurrent.duration._
@@ -30,7 +30,7 @@ trait UserRoutes extends JsonSupport {
   implicit lazy val timeout: Timeout = Timeout(5.seconds)
 
   lazy val userRoutes: Route =
-    pathPrefix( "users") {
+    pathPrefix("users") {
       concat(
         pathEnd {
           concat(
@@ -39,6 +39,17 @@ trait UserRoutes extends JsonSupport {
                 (userRegistryActor ? GetUsers).mapTo[Users]
               complete(users)
             })
+        },
+        pathPrefix(Segment) { pseudo =>
+          concat(
+            path("set-blacklist") {
+              patch {
+                val user: Future[ActionPerformedUser] =
+                  (userRegistryActor ? SetBlacklist(pseudo)).mapTo[ActionPerformedUser]
+                complete(user)
+              }
+            }
+          )
         })
     }
 }

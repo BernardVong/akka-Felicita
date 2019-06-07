@@ -1,12 +1,12 @@
 package utils
 
-import com.typesafe.config.ConfigFactory
+import com.typesafe.config.{Config, ConfigFactory}
 
 import scala.util.Properties
 
 class Database(fileNameOption: Option[String] = None) {
 
-  val config = fileNameOption.fold(
+  val config: Config = fileNameOption.fold(
     ifEmpty = ConfigFactory.load() )(
     file => ConfigFactory.load(file) )
 

@@ -2,10 +2,8 @@ package com.felicita.actors
 
 import akka.actor.{Actor, ActorLogging, Props}
 import akka.http.scaladsl.server.Directives.complete
-import com.typesafe.config.ConfigFactory
 import utils.FromMap.to
 import utils.{Database, SQLiteHelpers}
-import scala.util.Properties
 
 object SurveyRegistryActor {
 
