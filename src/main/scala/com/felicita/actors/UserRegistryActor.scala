@@ -41,11 +41,17 @@ class UserRegistryActor extends Actor with ActorLogging {
       }
     case SetBlacklist(pseudo: String) =>
       println(s"My secret value is $url")
-      val query = s"UPDATE users SET is_blacklist = 1 WHERE id like $pseudo"
+      val query = s"UPDATE users SET is_blacklist = 1 WHERE pseudo like '$pseudo'"
       print(query)
       val request =  SQLiteHelpers.request(url,query , Seq("pseudo"))
-      print(request)
       sender() ! ActionPerformedUser(s"Users : ($pseudo) is blacklist")
+
+    case UnsetBlacklist(pseudo: String) =>
+      println(s"My secret value is $url")
+      val query = s"UPDATE users SET is_blacklist = 0 WHERE pseudo like '$pseudo'"
+      print(query)
+      val request =  SQLiteHelpers.request(url,query , Seq("pseudo"))
+      sender() ! ActionPerformedUser(s"Users : ($pseudo) is not blacklist")
   }
 }
 

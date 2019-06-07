@@ -48,6 +48,13 @@ trait UserRoutes extends JsonSupport {
                   (userRegistryActor ? SetBlacklist(pseudo)).mapTo[ActionPerformedUser]
                 complete(user)
               }
+            },
+            path("unset-blacklist") {
+              patch {
+                val user: Future[ActionPerformedUser] =
+                  (userRegistryActor ? UnsetBlacklist(pseudo)).mapTo[ActionPerformedUser]
+                complete(user)
+              }
             }
           )
         })
