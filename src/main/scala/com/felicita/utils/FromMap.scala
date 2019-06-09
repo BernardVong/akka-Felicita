@@ -1,4 +1,4 @@
-package utils
+package com.felicita.utils
 
 import shapeless._, labelled.{ FieldType, field }
 

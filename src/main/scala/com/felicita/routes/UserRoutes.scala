@@ -55,6 +55,11 @@ trait UserRoutes extends JsonSupport {
                   (userRegistryActor ? UnsetBlacklist(pseudo)).mapTo[ActionPerformedUser]
                 complete(user)
               }
+            },
+            get {
+              val user: Future[User] =
+                (userRegistryActor ? GetUser(pseudo)).mapTo[User]
+              complete(user)
             }
           )
         })

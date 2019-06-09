@@ -1,4 +1,4 @@
-package utils
+package com.felicita.utils
 
 import java.sql.{Connection, DriverManager, ResultSet}
 
@@ -30,7 +30,7 @@ object SQLiteHelpers{
     }
 
     val resultFormat = result match{
-      case Some(rs) => Some(Iterator.continually(buildMap(rs, cols)).takeWhile(!_.isEmpty).map(_.get).toVector)
+      case Some(rs) => Some(Iterator.continually(buildMap(rs, cols)).takeWhile(_.isDefined).map(_.get).toVector)
       case None => None
     }
 

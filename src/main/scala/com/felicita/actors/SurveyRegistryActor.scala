@@ -2,12 +2,13 @@ package com.felicita.actors
 
 import akka.actor.{Actor, ActorLogging, Props}
 import akka.http.scaladsl.server.Directives.complete
-import utils.FromMap.to
-import utils.{Database, SQLiteHelpers}
+import com.typesafe.config.ConfigFactory
+import com.felicita.utils.FromMap.to
+import com.felicita.utils.SQLiteHelpers
 
 object SurveyRegistryActor {
 
-  final case class Survey(id: Option[Int], total_response_0: Double, user_id: Int)
+  final case class Survey(id: Int, total_response_0: Double, user_id: Int)
 
   final case class Surveys(surveys: Vector[Survey])
 
@@ -24,7 +25,8 @@ class SurveyRegistryActor extends Actor with ActorLogging {
 
   import SurveyRegistryActor._
 
-  val database = new Database()
+  val url: String = ConfigFactory.load().getString("url")
+  println(s"My secret value is $url")
 
   def receive: Receive = {
 
@@ -33,8 +35,7 @@ class SurveyRegistryActor extends Actor with ActorLogging {
         | Methods : Get
         | Path : /surveys
       """.stripMargin
-      val url = database.envOrElseConfig("url")
-      println(s"My secret value is $url")
+
       val request = SQLiteHelpers.request(url, "SELECT * FROM surveys", Seq("id", "total_response_0", "user_id"))
       request match {
         case Some(r) => val values = r.flatMap(s => to[Survey].from(s))
@@ -46,9 +47,13 @@ class SurveyRegistryActor extends Actor with ActorLogging {
       """
         | Methods : Post
         | Path : /surveys
+        |   {
+        |	  "id": 0,
+        |	  "total_response_0": 13.0,
+        |	  "user_id": 23
+        |   }
       """.stripMargin
-      val url = database.envOrElseConfig("url")
-      println(s"My secret value is $url")
+
       val query = s"INSERT INTO surveys(total_response_0,user_id) VALUES (${survey.total_response_0},${survey.user_id})"
       print(query)
       SQLiteHelpers.request(url, query, Seq("total_response_0", "user_id"))
