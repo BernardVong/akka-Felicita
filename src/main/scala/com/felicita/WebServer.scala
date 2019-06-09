@@ -20,11 +20,13 @@ import com.felicita.utils.SQLiteHelpers
 import com.felicita.utils.FromMap.to
 import com.felicita.routes.UserRoutes
 import com.felicita.routes.SurveyRoutes
+import com.felicita.routes.GiveawayRoutes
 import com.felicita.actors.UserRegistryActor
 import com.felicita.actors.SurveyRegistryActor
+import com.felicita.actors.GiveawayRegistryActor
 import scala.concurrent.duration._
 
-object WebServer extends App with SurveyRoutes  with UserRoutes{
+object WebServer extends App with SurveyRoutes  with UserRoutes with GiveawayRoutes {
 
   override lazy val log = Logging(system, classOf)
   override implicit lazy val timeout: Timeout = Timeout(5.seconds)
@@ -35,9 +37,9 @@ object WebServer extends App with SurveyRoutes  with UserRoutes{
 
   val surveyRegistryActor: ActorRef = system.actorOf(SurveyRegistryActor.props, "surveyRegistryActor")
   val userRegistryActor: ActorRef = system.actorOf(UserRegistryActor.props, "userRegistryActor")
-
+  val giveawayRegistryActor: ActorRef = system.actorOf(GiveawayRegistryActor.props, "giveawayRegistryActor")
   object MainRouter {
-    lazy val routes: Route =  surveyRoutes ~ userRoutes
+    lazy val routes: Route =  surveyRoutes ~ userRoutes ~ giveawayRoutes
   }
 
   val serverBinding: Future[Http.ServerBinding] = Http().bindAndHandle(MainRouter.routes, "localhost", 8080)

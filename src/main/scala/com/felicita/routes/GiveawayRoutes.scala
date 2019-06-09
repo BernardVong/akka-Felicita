@@ -14,39 +14,29 @@ import akka.http.scaladsl.server.directives.RouteDirectives.complete
 import akka.http.scaladsl.server.directives.PathDirectives.path
 
 import scala.concurrent.Future
-import com.felicita.actors.SurveyRegistryActor._
+import com.felicita.actors.GiveawayRegistryActor._
 import com.felicita.supports.JsonSupport
 import akka.util.Timeout
 import akka.pattern.ask
 
-trait SurveyRoutes extends JsonSupport {
-
+trait GiveawayRoutes extends JsonSupport {
   implicit def system: ActorSystem
 
-  lazy val log = Logging(system, classOf[SurveyRoutes])
+  lazy val log = Logging(system, classOf[GiveawayRoutes])
 
-  def surveyRegistryActor: ActorRef
+  def giveawayRegistryActor: ActorRef
 
   implicit lazy val timeout: Timeout = Timeout(5.seconds)
 
-  lazy val surveyRoutes: Route =
-    pathPrefix("surveys") {
+  lazy val giveawayRoutes: Route =
+    pathPrefix("giveaways") {
       concat(
         pathEnd {
           concat(
             get {
-              val surveys: Future[Surveys] =
-                (surveyRegistryActor ? GetSurveys).mapTo[Surveys]
-              complete(surveys)
-            },
-            post {
-              entity(as[Survey]) { survey =>
-                val surveyCreated: Future[ActionPerformed] =
-                  (surveyRegistryActor ? CreateSurvey(survey)).mapTo[ActionPerformed]
-                onSuccess(surveyCreated) { performed =>
-                  complete((StatusCodes.Created, performed))
-                }
-              }
+              val giveaways: Future[Giveaways] =
+                (giveawayRegistryActor ? GetGiveaways).mapTo[Giveaways]
+              complete(giveaways)
             }
           )
         })
