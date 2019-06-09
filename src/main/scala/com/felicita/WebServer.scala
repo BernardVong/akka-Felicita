@@ -21,12 +21,14 @@ import com.felicita.utils.FromMap.to
 import com.felicita.routes.UserRoutes
 import com.felicita.routes.SurveyRoutes
 import com.felicita.routes.GiveawayRoutes
+import com.felicita.routes.DonationRoutes
 import com.felicita.actors.UserRegistryActor
 import com.felicita.actors.SurveyRegistryActor
 import com.felicita.actors.GiveawayRegistryActor
+import com.felicita.actors.DonationRegistryActor
 import scala.concurrent.duration._
 
-object WebServer extends App with SurveyRoutes  with UserRoutes with GiveawayRoutes {
+object WebServer extends App with SurveyRoutes  with UserRoutes with GiveawayRoutes with DonationRoutes {
 
   override lazy val log = Logging(system, classOf)
   override implicit lazy val timeout: Timeout = Timeout(5.seconds)
@@ -38,8 +40,11 @@ object WebServer extends App with SurveyRoutes  with UserRoutes with GiveawayRou
   val surveyRegistryActor: ActorRef = system.actorOf(SurveyRegistryActor.props, "surveyRegistryActor")
   val userRegistryActor: ActorRef = system.actorOf(UserRegistryActor.props, "userRegistryActor")
   val giveawayRegistryActor: ActorRef = system.actorOf(GiveawayRegistryActor.props, "giveawayRegistryActor")
+  val donationRegistryActor: ActorRef = system.actorOf(DonationRegistryActor.props, "donationRegistryActor")
+
+
   object MainRouter {
-    lazy val routes: Route =  surveyRoutes ~ userRoutes ~ giveawayRoutes
+    lazy val routes: Route =  surveyRoutes ~ userRoutes ~ giveawayRoutes ~ donationRoutes
   }
 
   val serverBinding: Future[Http.ServerBinding] = Http().bindAndHandle(MainRouter.routes, "localhost", 8080)

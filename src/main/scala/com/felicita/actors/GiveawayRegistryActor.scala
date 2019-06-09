@@ -16,22 +16,19 @@ object GiveawayRegistryActor {
 
   final case class GetGiveaway(name: String)
 
-  final case class ActionPerformedGiveaway(description: String)
-
-  val giveaway_fields: Seq[String] = Seq("id", "description_giveaway")
+  final case class GiveawayActionPerformed(description: String)
 
   def props: Props = Props[GiveawayRegistryActor]
 
+  val giveaway_fields: Seq[String] = Seq("id", "description_giveaway")
+  val url: String = ConfigFactory.load().getString("url")
+  val table_name : String = "giveaways"
 
 }
 
 class GiveawayRegistryActor extends Actor with ActorLogging {
 
   import GiveawayRegistryActor._
-
-  val url: String = ConfigFactory.load().getString("url")
-  println(s"My secret value is $url")
-  val table_name = "giveaways"
 
   def receive: Receive = {
     case GetGiveaways => selectAll(table_name, giveaways => {

@@ -16,32 +16,30 @@ object SurveyRegistryActor {
 
   final case class CreateSurvey(survey: Survey)
 
-  final case class ActionPerformed(description: String)
+  final case class SurveyActionPerformed(description: String)
 
   def props: Props = Props[SurveyRegistryActor]
+
+  val surveys_fields: Seq[String] = Seq("id", "total_response_0", "user_id")
+  val url: String = ConfigFactory.load().getString("url")
+  val table_name : String = "surveys"
+
 }
 
 class SurveyRegistryActor extends Actor with ActorLogging {
 
   import SurveyRegistryActor._
 
-  val url: String = ConfigFactory.load().getString("url")
-  println(s"My secret value is $url")
-
   def receive: Receive = {
 
-    case GetSurveys =>
+    case GetSurveys => selectAll(table_name, surveys => {
+      sender() ! surveys
+    })
       """
         | Methods : Get
         | Path : /surveys
       """.stripMargin
 
-      val request = SQLiteHelpers.request(url, "SELECT * FROM surveys", Seq("id", "total_response_0", "user_id"))
-      request match {
-        case Some(r) => val values = r.flatMap(s => to[Survey].from(s))
-          sender() ! Surveys(values)
-        case None => complete("mauvaise table")
-      }
 
     case CreateSurvey(survey) =>
       """
@@ -57,6 +55,16 @@ class SurveyRegistryActor extends Actor with ActorLogging {
       val query = s"INSERT INTO surveys(total_response_0,user_id) VALUES (${survey.total_response_0},${survey.user_id})"
       print(query)
       SQLiteHelpers.request(url, query, Seq("total_response_0", "user_id"))
-      sender() ! ActionPerformed(s"Survey add (${survey.total_response_0}) created for users_id is ${survey.user_id}")
+      sender() ! SurveyActionPerformed(s"Survey add (${survey.total_response_0}) created for users_id is ${survey.user_id}")
+  }
+
+  def selectAll(table_name: String, callback: Any => Any): Unit = {
+    val query = "SELECT * FROM %s".format(table_name)
+    val request = SQLiteHelpers.request(url, query, surveys_fields)
+    request match {
+      case Some(r) => val values = r.flatMap(s => to[Survey].from(s))
+        sender() ! Surveys(values)
+      case None => complete("mauvaise table")
+    }
   }
 }

@@ -20,20 +20,18 @@ object UserRegistryActor {
 
   final case class UnsetBlacklist(pseudo: String)
 
-  final case class ActionPerformedUser(description: String)
-
-  val users_fields: Seq[String] = Seq("id", "first_name", "last_name", "pseudo", "subscriber", "is_blacklist")
+  final case class UserActionPerformed(description: String)
 
   def props: Props = Props[UserRegistryActor]
+
+  val users_fields: Seq[String] = Seq("id", "first_name", "last_name", "pseudo", "subscriber", "is_blacklist")
+  val url: String = ConfigFactory.load().getString("url")
+  val table_name : String = "users"
 }
 
 class UserRegistryActor extends Actor with ActorLogging {
 
   import UserRegistryActor._
-
-  val url: String = ConfigFactory.load().getString("url")
-  println(s"My secret value is $url")
-  val table_name = "users"
 
   def receive: Receive = {
 
@@ -52,7 +50,7 @@ class UserRegistryActor extends Actor with ActorLogging {
       """.stripMargin
       val query = s"UPDATE users SET is_blacklist = 1 WHERE pseudo like '$pseudo'"
       SQLiteHelpers.request(url, query, Seq("pseudo"))
-      sender() ! ActionPerformedUser(s"Users : ($pseudo) is blacklist")
+      sender() ! UserActionPerformed(s"Users : ($pseudo) is blacklist")
 
     case UnsetBlacklist(pseudo: String) =>
       """
@@ -61,7 +59,7 @@ class UserRegistryActor extends Actor with ActorLogging {
       """.stripMargin
       val query = s"UPDATE users SET is_blacklist = 0 WHERE pseudo like '$pseudo'"
       SQLiteHelpers.request(url, query, Seq("pseudo"))
-      sender() ! ActionPerformedUser(s"Users : ($pseudo) is not blacklist")
+      sender() ! UserActionPerformed(s"Users : ($pseudo) is not blacklist")
   }
 
   def selectAll(table_name: String, callback: Any => Any): Unit = {

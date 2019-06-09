@@ -44,15 +44,15 @@ trait UserRoutes extends JsonSupport {
           concat(
             path("set-blacklist") {
               patch {
-                val user: Future[ActionPerformedUser] =
-                  (userRegistryActor ? SetBlacklist(pseudo)).mapTo[ActionPerformedUser]
+                val user: Future[UserActionPerformed] =
+                  (userRegistryActor ? SetBlacklist(pseudo)).mapTo[UserActionPerformed]
                 complete(user)
               }
             },
             path("unset-blacklist") {
               patch {
-                val user: Future[ActionPerformedUser] =
-                  (userRegistryActor ? UnsetBlacklist(pseudo)).mapTo[ActionPerformedUser]
+                val user: Future[UserActionPerformed] =
+                  (userRegistryActor ? UnsetBlacklist(pseudo)).mapTo[UserActionPerformed]
                 complete(user)
               }
             },
