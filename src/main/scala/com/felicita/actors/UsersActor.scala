@@ -16,13 +16,20 @@ final case class Users(users: Seq[User])
 
 
 object UsersActors {
+  /* UTILS */
   final case class Alert(message: String)
   final case class AlertError(message: String = "", cause: Throwable = None.orNull) extends Exception(message, cause)
+
+  /* USERS */
   final case object GetUsers
   final case class CreateUser(user: JsValue)
   final case class GetUser(name: String)
   final case class DeleteUser(name: String)
+
+  /* SUBSCRIBERS & BLACKLIST */
   final case class UpdateUserToggleField(name: String, toggleField: String, toggleValue: Boolean)
+  final case object GetSubscribers
+
 
   def props: Props = Props[UsersActors]
 
@@ -67,6 +74,7 @@ class UsersActors extends Actor with ActorLogging  {
       }
       else sender() ! akka.actor.Status.Failure(AlertError("User not found"))
 
+    case GetSubscribers => sender() ! Users(selectAll().users.filter(_.is_subscriber == 1))
 
   }
   /** ROUTES END **/

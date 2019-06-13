@@ -50,6 +50,11 @@ trait UsersRoutes extends JsonSupport {
           post { entity(as[JsValue]) { json => onCompleteCustom(responseType = "alert", (usersActor ? CreateUser(json)).mapTo[Alert]) } }
         )
       },
+      path("subscribers") {
+        get{
+          get { onCompleteCustom(responseType = "users", (usersActor ? GetSubscribers).mapTo[Users]) }
+        }
+      },
       pathPrefix(Segment) { pseudo =>
         concat(
           get { onCompleteCustom(responseType = "user", (usersActor ? GetUser(pseudo)).mapTo[User]) },
