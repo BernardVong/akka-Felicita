@@ -28,6 +28,7 @@ CREATE TABLE surveys (
 );
 
 
+
 INSERT INTO users(id,first_name,last_name,pseudo,is_subscriber,is_blacklisted) VALUES (1, 'Pierre','Simon','psim',True,False);
 INSERT INTO users(id,first_name,last_name,pseudo,is_subscriber,is_blacklisted) VALUES (2, 'Paul','Trois','polo',False, False);
 INSERT INTO users(id,first_name,last_name,pseudo,is_subscriber,is_blacklisted) VALUES (3, 'Jacque','Gaudefroy','jacouille',True, False);
