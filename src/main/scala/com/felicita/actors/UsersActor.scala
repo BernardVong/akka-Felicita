@@ -1,10 +1,10 @@
 package com.felicita.actors
 
 import akka.actor.{Actor, ActorLogging, ActorRef, Props}
-import com.felicita._utils.{CaseClassHelpers, SQLiteHelpers}
+import com.felicita._utils.{ActorsHelpers, SQLiteHelpers}
 import com.typesafe.config.ConfigFactory
 import com.felicita._utils.FromMap._
-import com.felicita._utils.CaseClassHelpers._
+import com.felicita._utils.ActorsHelpers._
 import spray.json.JsValue
 
 
@@ -33,10 +33,10 @@ object UsersActors {
 
   def props: Props = Props[UsersActors]
 
-
-  val users_fields: Seq[String] = Seq("pseudo", "first_name", "last_name", "is_subscriber", "is_blacklisted")
-  val users_fields_with_id: Seq[String] = users_fields :+ "id"
-  val users_db: String = ConfigFactory.load().getString("db_url")
+  val db_table = "users"
+  val db_path: String = ConfigFactory.load().getString("db_url")
+  val db_fields: Seq[String] = Seq("pseudo", "first_name", "last_name", "is_subscriber", "is_blacklisted")
+  val db_fields_with_id: Seq[String] = db_fields :+ "id"
 }
 
 
@@ -47,51 +47,41 @@ class UsersActors extends Actor with ActorLogging  {
   /** ROUTES **/
   override def receive: Receive = {
 
-    case GetUsers => sender() ! selectAll
+    case GetUsers => sender() ! selectAll(db_table, db_fields_with_id).asInstanceOf[Users]
 
     case CreateUser(request: JsValue) =>
-      SQLiteHelpers.request(users_db, "INSERT INTO users (" +getFieldsFromJsonToString(request)+ ") VALUES (" +getValuesFromJsonToString(request)+ ")", users_fields)
+      SQLiteHelpers.request(db_path, "INSERT INTO " +db_table+ " (" +getFieldsFromJsonToString(request)+ ") VALUES (" +getValuesFromJsonToString(request)+ ")", db_fields)
       sender() ! Alert("User added.")
 
     case GetUser(pseudo) =>
-      val user = selectByPseudo(pseudo)
+      val user = findByPseudo(db_table, db_fields_with_id, pseudo)
       sender() ! (if(user.isDefined) user.get else akka.actor.Status.Failure(AlertError("User not found")))
 
     case DeleteUser(pseudo) =>
-      val user = selectByPseudo(pseudo)
+      val user = findByPseudo(db_table, db_fields_with_id, pseudo)
       if(user.isDefined) {
-        SQLiteHelpers.request(users_db, "DELETE FROM users WHERE id=" + user.get.id, users_fields)
+        SQLiteHelpers.request(db_path, "DELETE FROM " +db_table+ " WHERE id=" + user.get.id, db_fields)
         sender() ! Alert("User removed.")
       }
       else sender() ! akka.actor.Status.Failure(AlertError("User not found"))
 
     case UpdateUserToggleField(pseudo, toggleField, toggleValue) =>
-      val user = selectByPseudo(pseudo)
+      val user = findByPseudo(db_table, db_fields_with_id, pseudo)
       if(user.isDefined) {
-        val query = s"UPDATE users SET $toggleField =  $toggleValue WHERE id=" + user.get.id
-        SQLiteHelpers.request(users_db, query, users_fields)
+        val query = s"UPDATE $db_table SET $toggleField =  $toggleValue WHERE id=" + user.get.id
+        SQLiteHelpers.request(db_path, query, db_fields)
         sender() ! Alert("User updated.")
       }
       else sender() ! akka.actor.Status.Failure(AlertError("User not found"))
 
-    case GetSubscribers => sender() ! Users(selectAll().users.filter(_.is_subscriber == 1))
+    case GetSubscribers => sender() ! Users(selectAll(db_table, db_fields_with_id).asInstanceOf[Users].users.filter(_.is_subscriber == 1))
 
   }
   /** ROUTES END **/
 
 
   /** UTILS **/
-  def selectAll(): Users =
-  {
-    val request = SQLiteHelpers.request(ConfigFactory.load().getString("db_url"), "SELECT * FROM users", users_fields_with_id)
-
-    request match {
-      case Some (r) => val values = r.flatMap (v => to[User].from (v) )
-        Users(values)
-    }
-  }
-
-  def selectByPseudo(pseudo: String): Option[User] = selectAll().users.find(_.pseudo == pseudo)
+  def findByPseudo(table: String, fields: Seq[String], pseudo: String): Option[User] = selectAll(table, fields).asInstanceOf[Users].users.find(_.pseudo == pseudo)
   /** UTILS END **/
 
 }

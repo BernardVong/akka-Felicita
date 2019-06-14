@@ -19,7 +19,7 @@ import com.felicita.routes._
 
 
 
-object AppServer extends App with UsersRoutes {
+object AppServer extends App with UsersRoutes with TipsRoutes {
 
   override implicit lazy val timeout: Timeout = Timeout(5.seconds)
 
@@ -28,10 +28,11 @@ object AppServer extends App with UsersRoutes {
   implicit val executionContext: ExecutionContext = system.dispatcher
 
   override val usersActor : ActorRef = system.actorOf(UsersActors.props, "usersActor")
+  override val tipsActor : ActorRef = system.actorOf(TipsActors.props, "tipssActor")
   //override val subscribersActor : ActorRef = system.actorOf(SubscribersActors.props, "subscribersActor")
 
   object AppRouter {
-    val routes: Route = usersRoutes
+    val routes: Route = usersRoutes ~tipsRoutes
   }
 
   val serverBinding: Future[Http.ServerBinding] = Http()(system).bindAndHandle(AppRouter.routes, "localhost", 8080)(materializer)

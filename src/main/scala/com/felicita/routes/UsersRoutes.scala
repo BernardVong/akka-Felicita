@@ -10,36 +10,25 @@ import akka.http.scaladsl.server.directives.PathDirectives.path
 import akka.http.scaladsl.server.directives.RouteDirectives.complete
 import akka.pattern.ask
 import akka.util.Timeout
-import com.felicita._utils.JsonSupport
 
 import scala.concurrent.Future
 import scala.concurrent.duration._
 import com.felicita.actors.UsersActors._
 import com.felicita.actors._
 import spray.json.JsValue
+import com.felicita._utils.RoutesHelpers._
+
 
 import scala.util.{Failure, Success}
 
 
-trait UsersRoutes extends JsonSupport {
+trait UsersRoutes {
 
   implicit val timeout: Timeout
-  implicit lazy val log: LoggingAdapter = Logging(system, classOf[UsersRoutes])
+  implicit lazy val usersLogs: LoggingAdapter = Logging(system, classOf[UsersRoutes])
   implicit def system: ActorSystem
 
   def usersActor: ActorRef
-  def onCompleteCustom(responseType: String, future: Future[Any]) : Route = {
-
-    onComplete(future) {
-      case Success (message) =>
-        responseType match {
-          case "user" => complete ((StatusCodes.OK, message.asInstanceOf[User]))
-          case "users" => complete ((StatusCodes.OK, message.asInstanceOf[Users]))
-          case "alert" => complete ((StatusCodes.OK, message.asInstanceOf[Alert]))
-        }
-      case Failure (exception) => complete ((StatusCodes.NotFound, s"An error occurred: ${exception.getMessage}") )
-    }
-  }
 
   lazy val usersRoutes: Route =
   pathPrefix("users") {
@@ -51,9 +40,7 @@ trait UsersRoutes extends JsonSupport {
         )
       },
       path("subscribers") {
-        get{
-          get { onCompleteCustom(responseType = "users", (usersActor ? GetSubscribers).mapTo[Users]) }
-        }
+        get { onCompleteCustom(responseType = "users", (usersActor ? GetSubscribers).mapTo[Users]) }
       },
       pathPrefix(Segment) { pseudo =>
         concat(

@@ -6,7 +6,7 @@ CREATE TABLE users (
     is_subscriber boolean,
     is_blacklisted boolean
 );
-CREATE TABLE donations(
+CREATE TABLE tips(
     id varchar(30) primary key,
     user_id integer,
     amount float
@@ -34,7 +34,7 @@ INSERT INTO users(id,first_name,last_name,pseudo,is_subscriber,is_blacklisted) V
 INSERT INTO users(id,first_name,last_name,pseudo,is_subscriber,is_blacklisted) VALUES (3, 'Jacque','Gaudefroy','jacouille',True, False);
 INSERT INTO users(id,first_name,last_name,pseudo,is_subscriber,is_blacklisted) VALUES (4, 'William','Sheakspear','serein',False, False);
 
-INSERT INTO donations(id, user_id, amount) VALUES ('243KJF9','1','10');
+INSERT INTO tips(id, user_id, amount) VALUES ('243KJF9','1','10');
 
 INSERT INTO giveaways(id, description_giveaway) VALUES (1,'dons de sang');
 

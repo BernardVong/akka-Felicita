@@ -2,3 +2,5 @@ target
 project/target
 .idea
 *.DS_Store
+
+databases/felicita.db
