@@ -17,6 +17,7 @@ object RoutesHelpers extends JsonSupport {
     onComplete(future) {
       case Success (message) =>
         responseType match {
+          case "alert"        => complete ((StatusCodes.OK, message.asInstanceOf[Alert]))
           case "user"         => complete ((StatusCodes.OK, message.asInstanceOf[User]))
           case "users"        => complete ((StatusCodes.OK, message.asInstanceOf[Users]))
           case "tip"          => complete ((StatusCodes.OK, message.asInstanceOf[Tip]))
@@ -25,7 +26,9 @@ object RoutesHelpers extends JsonSupport {
           case "giveaway"     => complete ((StatusCodes.OK, message.asInstanceOf[Giveaway]))
           case "giveaways"    => complete ((StatusCodes.OK, message.asInstanceOf[Giveaways]))
           case "entries"      => complete ((StatusCodes.OK, message.asInstanceOf[Entries]))
-          case "alert"        => complete ((StatusCodes.OK, message.asInstanceOf[Alert]))
+          case "survey"       => complete ((StatusCodes.OK, message.asInstanceOf[Survey]))
+          case "surveys"      => complete ((StatusCodes.OK, message.asInstanceOf[Surveys]))
+
         }
       case Failure (exception) => complete ((StatusCodes.NotFound, s"An error occurred: ${exception.getMessage}") )
     }

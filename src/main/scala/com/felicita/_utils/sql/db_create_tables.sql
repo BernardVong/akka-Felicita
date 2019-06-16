@@ -22,7 +22,8 @@ CREATE TABLE giveaway_users (
     user_id integer
 );
 CREATE TABLE surveys (
-    id varchar(30) primary key,
+    id integer primary key autoincrement,
+    question varchar(30),
     response_1 integer,
     response_2 integer
 );

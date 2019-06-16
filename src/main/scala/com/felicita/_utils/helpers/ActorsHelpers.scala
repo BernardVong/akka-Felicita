@@ -37,6 +37,7 @@ object ActorsHelpers {
           case TipsActors.db_table => Tips(r.flatMap(v => to[Tip].from (v)))
           case GiveawaysActors.db_table => Giveaways(r.flatMap(v => to[Giveaway].from (v)))
           case GiveawaysActors.db_entries => Entries(r.flatMap(v => to[Entry].from (v)))
+          case SurveysActors.db_table => Surveys(r.flatMap(v => to[Survey].from (v)))
         }
     }
   }
@@ -46,6 +47,8 @@ object ActorsHelpers {
       case TipsActors.db_table => selectAll(table, fields).asInstanceOf[Tips].tips.find(_.id == id)
       case GiveawaysActors.db_table => selectAll(table, fields).asInstanceOf[Giveaways].giveaways.find(_.id == id)
       case GiveawaysActors.db_entries => selectAll(table, fields).asInstanceOf[Entries].entries.find(_.id == id)
+      case SurveysActors.db_table => selectAll(table, fields).asInstanceOf[Surveys].surveys.find(_.id == id)
+
     }
 
 
