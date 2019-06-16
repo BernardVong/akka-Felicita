@@ -1,13 +1,17 @@
-package com.felicita._utils
+package com.felicita._utils.helpers
 
 import com.felicita._utils.FromMap.to
 import com.felicita.actors._
 import com.typesafe.config.ConfigFactory
 import spray.json.{JsObject, JsValue}
 
-
-
 object ActorsHelpers {
+
+  /** UTILS **/
+  final case class Alert(message: String)
+  final case class AlertError(message: String = "", cause: Throwable = None.orNull) extends Exception(message, cause)
+  /** UTILS END **/
+
 
   /** FIELDS/VALUES **/
   def getFieldsFromCaseClassToString(caseClass: Any) : String = caseClass.getClass.getDeclaredFields.map(_.getName).mkString(",")
@@ -29,17 +33,23 @@ object ActorsHelpers {
     request match {
       case Some(r) =>
         table match {
-          case "users" => Users(r.flatMap(v => to[User].from (v)))
-          case "tips" => Tips(r.flatMap(v => to[Tip].from (v)))
+          case UsersActors.db_table => Users(r.flatMap(v => to[User].from (v)))
+          case TipsActors.db_table => Tips(r.flatMap(v => to[Tip].from (v)))
+          case GiveawaysActors.db_table => Giveaways(r.flatMap(v => to[Giveaway].from (v)))
+          case GiveawaysActors.db_entries => Entries(r.flatMap(v => to[Entry].from (v)))
         }
     }
   }
   def findById(table: String, fields: Seq[String], id: Any): Option[Any] =
     table match {
-      case "users" => selectAll(table, fields).asInstanceOf[Users].users.find(_.id == id)
-      case "tips" => selectAll(table, fields).asInstanceOf[Tips].tips.find(_.id == id)
+      case UsersActors.db_table => selectAll(table, fields).asInstanceOf[Users].users.find(_.id == id)
+      case TipsActors.db_table => selectAll(table, fields).asInstanceOf[Tips].tips.find(_.id == id)
+      case GiveawaysActors.db_table => selectAll(table, fields).asInstanceOf[Giveaways].giveaways.find(_.id == id)
+      case GiveawaysActors.db_entries => selectAll(table, fields).asInstanceOf[Entries].entries.find(_.id == id)
     }
 
+
+  def SumTipsByUser(userId: Int): Double = selectAll(TipsActors.db_table, TipsActors.db_fields_with_id).asInstanceOf[Tips].tips.filter(_.user_id == userId).map(_.amount).sum
   /** QUERIES BUILDER END **/
 
 

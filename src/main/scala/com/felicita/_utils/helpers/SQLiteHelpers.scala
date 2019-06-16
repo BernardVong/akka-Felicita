@@ -1,4 +1,4 @@
-package com.felicita._utils
+package com.felicita._utils.helpers
 
 import java.sql.{Connection, DriverManager, ResultSet}
 

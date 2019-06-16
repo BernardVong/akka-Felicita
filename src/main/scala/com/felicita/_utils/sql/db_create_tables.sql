@@ -13,10 +13,10 @@ CREATE TABLE tips(
 );
 CREATE TABLE giveaways (
     id integer primary key autoincrement,
-    user_id_winner integer,
-    description_giveaway text
+    name text,
+    user_id_winner integer
 );
-CREATE TABLE giveaway_subscribers (
+CREATE TABLE giveaway_users (
     id integer primary key autoincrement,
     giveaway_id integer,
     user_id integer
@@ -38,6 +38,6 @@ INSERT INTO tips(id, user_id, amount) VALUES ('243KJF9','1','10');
 
 INSERT INTO giveaways(id, description_giveaway) VALUES (1,'dons de sang');
 
-INSERT INTO giveaway_subscribers(id, giveaway_id, user_id) VALUES (1,'1','3');
+INSERT INTO giveaway_users(id, giveaway_id, user_id) VALUES (1, 1, 3);
 
 INSERT INTO surveys(id,response_1, response_2) VALUES (1,10, 12);

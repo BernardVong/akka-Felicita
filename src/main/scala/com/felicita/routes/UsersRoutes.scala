@@ -10,14 +10,14 @@ import akka.http.scaladsl.server.directives.PathDirectives.path
 import akka.http.scaladsl.server.directives.RouteDirectives.complete
 import akka.pattern.ask
 import akka.util.Timeout
+import com.felicita._utils.helpers.ActorsHelpers.Alert
 
 import scala.concurrent.Future
 import scala.concurrent.duration._
 import com.felicita.actors.UsersActors._
 import com.felicita.actors._
 import spray.json.JsValue
-import com.felicita._utils.RoutesHelpers._
-
+import com.felicita._utils.helpers.RoutesHelpers._
 
 import scala.util.{Failure, Success}
 

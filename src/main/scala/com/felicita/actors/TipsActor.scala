@@ -1,10 +1,11 @@
 package com.felicita.actors
 
 import akka.actor.{Actor, ActorLogging, ActorRef, Props}
-import com.felicita._utils.{ActorsHelpers, SQLiteHelpers}
+import com.felicita._utils.helpers._
 import com.typesafe.config.ConfigFactory
 import com.felicita._utils.FromMap._
-import com.felicita._utils.ActorsHelpers._
+import com.felicita._utils.helpers.ActorsHelpers._
+import com.felicita._utils.helpers.SQLiteHelpers
 import spray.json.JsValue
 
 
@@ -17,9 +18,6 @@ final case class TipsUsers(tips: Map[String, Double])
 
 
 object TipsActors {
-  /* UTILS */
-  final case class Alert(message: String)
-  final case class AlertError(message: String = "", cause: Throwable = None.orNull) extends Exception(message, cause)
 
   /* TIPS */
   final case object GetTips
@@ -30,6 +28,7 @@ object TipsActors {
   final case object GetTotalTips
   final case class GetTotalTipsUser(userId: Int)
   final case object GetDistinctTipsUsers
+
 
 
   def props: Props = Props[TipsActors]
@@ -69,28 +68,26 @@ class TipsActors extends Actor with ActorLogging  {
       else sender() ! akka.actor.Status.Failure(AlertError("Tip not found"))
 
     case GetTipsUsers =>
-      val users = selectAll("users", UsersActors.db_fields_with_id).asInstanceOf[Users]
+      val users = selectAll(UsersActors.db_table, UsersActors.db_fields_with_id).asInstanceOf[Users]
       val donorsIDs = selectAll(db_table, db_fields_with_id).asInstanceOf[Tips].tips.map(_.user_id).distinct
       sender() ! Users(users.users.filter(user => donorsIDs.contains(user.id)))
 
     case GetTotalTips =>
       sender() ! Alert("Tips total: " + selectAll(db_table, db_fields_with_id).asInstanceOf[Tips].tips.map(_.amount).sum + " euros")
 
-    case GetTotalTipsUser(userId) =>
-      val message = selectAll(db_table, db_fields_with_id).asInstanceOf[Tips].tips.filter(_.user_id == userId).map(_.amount).sum + " euros"
-      sender() ! Alert("Tips total for this user : " + message)
+    case GetTotalTipsUser(userId) => sender() ! Alert("Tips total for this user : " + SumTipsByUser(userId) + " euros")
 
     case GetDistinctTipsUsers =>
-      val users = selectAll("users", UsersActors.db_fields_with_id).asInstanceOf[Users]
+      val users = selectAll(UsersActors.db_table, UsersActors.db_fields_with_id).asInstanceOf[Users]
       val tips = selectAll(db_table, db_fields_with_id).asInstanceOf[Tips].tips
 
-      val tipsByUser = tips.groupBy(tip => tip.user_id)
+      val tipsByUser = tips
+        .groupBy(tip => tip.user_id)
         .map(user => (headOrEmpty(users.users.filter(_.id == user._1).map(_.pseudo)), user._2.map(_.amount).sum))
 
       sender() ! TipsUsers(tipsByUser)
   }
   /** ROUTES END **/
-
 
 }
 

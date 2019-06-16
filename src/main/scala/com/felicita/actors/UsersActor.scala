@@ -1,10 +1,11 @@
 package com.felicita.actors
 
 import akka.actor.{Actor, ActorLogging, ActorRef, Props}
-import com.felicita._utils.{ActorsHelpers, SQLiteHelpers}
+import com.felicita._utils.helpers._
 import com.typesafe.config.ConfigFactory
 import com.felicita._utils.FromMap._
-import com.felicita._utils.ActorsHelpers._
+import com.felicita._utils.helpers.ActorsHelpers._
+import com.felicita._utils.helpers.SQLiteHelpers
 import spray.json.JsValue
 
 
@@ -16,10 +17,6 @@ final case class Users(users: Seq[User])
 
 
 object UsersActors {
-  /* UTILS */
-  final case class Alert(message: String)
-  final case class AlertError(message: String = "", cause: Throwable = None.orNull) extends Exception(message, cause)
-
   /* USERS */
   final case object GetUsers
   final case class CreateUser(user: JsValue)
