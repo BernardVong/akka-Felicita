@@ -47,7 +47,8 @@ class UsersActors extends Actor with ActorLogging  {
     case GetUsers => sender() ! selectAll(db_table, db_fields_with_id).asInstanceOf[Users]
 
     case CreateUser(request: JsValue) =>
-      SQLiteHelpers.request(db_path, "INSERT INTO " +db_table+ " (" +getFieldsFromJsonToString(request)+ ") VALUES (" +getValuesFromJsonToString(request)+ ")", db_fields)
+      val query = "INSERT INTO " +db_table+ " (" +getFieldsFromJsonToString(request)+ ") VALUES (" +getValuesFromJsonToString(request)+ ")"
+      SQLiteHelpers.request(db_path, query, db_fields)
       sender() ! Alert("User added.")
 
     case GetUser(pseudo) =>
