@@ -1,0 +1,768 @@
+{
+	"info": {
+		"_postman_id": "92e57e40-2171-493d-814e-2d34f2eb1e23",
+		"name": "4IBD - AKKA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "/users/{pseudo}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/users/bernard",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"users",
+										"bernard"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/users/{pseudo}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/users/bernard",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"users",
+										"bernard"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "blacklist",
+					"item": [
+						{
+							"name": "/users/{pseudo}/blacklist",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/users/bernard/blacklist",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"users",
+										"bernard",
+										"blacklist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/users/{pseudo}/unblacklist",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/users/bernard/unblacklist",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"users",
+										"bernard",
+										"unblacklist"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "subscribers",
+					"item": [
+						{
+							"name": "/users/subscribers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/users/subscribers",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"users",
+										"subscribers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/users/{pseudo}/subscribe",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/users/mikao/subscribe",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"users",
+										"mikao",
+										"subscribe"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/users/{pseudo}/unsubscribe",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/users/mikao/unsubscribe",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"users",
+										"mikao",
+										"unsubscribe"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pseudo\": \"Mikao\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Wick\",\n    \"is_subscriber\": 0,\n    \"is_blacklisted\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tips",
+			"item": [
+				{
+					"name": "tip",
+					"item": [
+						{
+							"name": "/tips/{id}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tips/243KJF2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tips",
+										"243KJF2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/tips/{id}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tips/243KJF2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tips",
+										"243KJF2"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "/tips/users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tips/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tips",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/tips/users/distinct",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tips/users/distinct",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tips",
+										"users",
+										"distinct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/tips/users/{id}/total",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/tips/users/1/total",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"tips",
+										"users",
+										"1",
+										"total"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/tips",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tips",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/tips",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"243AVZADAZ\",\n\t\"user_id\": 1,\n\t\"amount\": 3\n}"
+						},
+						"url": {
+							"raw": "{{url}}/tips",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/tips/total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tips/total",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tips",
+								"total"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "giveaways",
+			"item": [
+				{
+					"name": "giveway",
+					"item": [
+						{
+							"name": "/giveaways/{id}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/giveaways/6",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"giveaways",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/giveaways/{id}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/giveaways/5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"giveaways",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "entries",
+					"item": [
+						{
+							"name": "/giveaways/{id}/entries",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/giveaways/6/entries",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"giveaways",
+										"6",
+										"entries"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/giveaways/{id}/participate",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"user_id\": 1\n}"
+								},
+								"url": {
+									"raw": "{{url}}/giveaways/6/participate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"giveaways",
+										"6",
+										"participate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/giveaways/{id}/close",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/giveaways/6/close",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"giveaways",
+										"6",
+										"close"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/giveaways/{id}/result",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/giveaways/6/result",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"giveaways",
+										"6",
+										"result"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/giveaways",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/giveaways",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"giveaways"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/giveaways",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Souris ROCCAT\",\n\t\"user_id_winner\": \"-1\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/giveaways",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"giveaways"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "surveys",
+			"item": [
+				{
+					"name": "survey",
+					"item": [
+						{
+							"name": "/surveys/{id}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/surveys/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"surveys",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/surveys/{id}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/surveys/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"surveys",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/surveys/{id}",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"user_id\": 1,\n\t\"response\": 2\n}"
+								},
+								"url": {
+									"raw": "{{url}}/surveys/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"surveys",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/surveys/{id}/result",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/surveys/2/result",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"surveys",
+										"2",
+										"result"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/surveys",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/surveys",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"surveys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/surveys",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"question\": \"Pain au chocolat ou chocolatine ?\",\n\t\"response_1\": 0,\n\t\"response_2\": 0\n}"
+						},
+						"url": {
+							"raw": "{{url}}/surveys",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"surveys"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
