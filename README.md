@@ -1,7 +1,7 @@
 # Scala project
 Introduction to Scala with AKKA Framework 
 
-# team
+# Team
 <table>
     <tr>
       <td>Bernard VONG</td>
@@ -14,122 +14,121 @@ Introduction to Scala with AKKA Framework
 </table>
 
 
-# todo
+# Todo
 - [x] Scala case class, trait, future, etc...
 - [x] AKKA Actors
 - [x] AKKA Marshalling / Unmarshalling  
 - [x] AKKA Routing 
 - [x] Database management
 
-# Initiazing project
+# Quickstart
 
-## Initiazing sbt
-Pour pouvoir utiliser le projet, il faut integrer une librarie pour le scala-test.
-ajouter dans votre config sbt -> ~/.sbt/1.X/global.sbt    X : la version de votre SBT
-la ligne suivant : 
+### Setup sbt
+Pour pouvoir utiliser le projet, il faut integrer la librairie scalatest.
+Ajoutez dans votre config sbt (~/.sbt/1.X/global.sbt) la ligne suivante : 
 ```
 resolvers += "Artima Maven Repository" at "http://repo.artima.com/releases"
 ```
 
-# Create database from bash
+### Create database
 ```
 bash utils/sh/db_create.sh
 ```
 
-## ROUTES
-###Postman file
+## All Routes helper - Postman
+
+Import Postman's collection
+```
 PROJECT_PATH/src/main/scala/com/felicita/_utils/routes.postman_collection.json
+```
 
-## PROJECT 
+And setup ENV variables
+```
+url as "http://localhost:8080"
+```
 
-Chaque requêtes GET/POST/PUT/DELETE sont explicitées ci-dessous pour tout les cas demandées :
+## Project Routes helper 
+
+Use the Postman Collection above and refer to the list of routes below
+
+###OR
+
+Use those routes below :
 
 ####Tips
-○ Récupérer la liste de tous les donateurs (liste de users)
-GET :
+○ Récupérer la liste de tous les donateurs (liste de users) :
 ```
-http://localhost:8080/tips
+GET http://localhost:8080/tips
 ```
-○ Réaliser un don
-GET :
+○ Réaliser un don :
 ```
-
+POST http://localhost:8080/tips
 ```
 
-○ Annuler un don
-GET
+○ Annuler un don :
+```
+DELETE http://localhost:8080/tips/{{id_tip}}
 ```
 
+○ Faire la somme de tous les dons : 
+```
+GET http://localhost:8080/tips/total
 ```
 
-○ Faire la somme de tous les dons
-GET 
+○ Faire la somme de tous les dons par utilisateur :
 ```
-
-```
-
-○ Faire la somme de tous les dons par utilisateur
-GET
-```
-
+GET http://localhost:8080/tips/users/distinct
 ```
 
 
-○ Faire la somme de tous les dons d’un utilisateur
-GET
+○ Faire la somme de tous les dons d’un utilisateur :
 ```
-
+GET http://localhost:8080/tips/users/{{id_user}}/total
 ```
 
 ####Subscribers
-○ Récupérer la liste de tous les abonnées (liste de users)
-GET
+○ Récupérer la liste de tous les abonnées (liste de users) :
 ```
-http://localhost:8080/users/subscribers
+GET http://localhost:8080/users/subscribers
 ```
 
 
 ####Giveaways
 ○ Créer un giveaway
-POST
 ```
-
+POST http://localhost:8080/giveaways
 ```
 
 ○ S'inscrire à un giveaway pour un utilisateur
-PUT
 ```
-
+POST http://localhost:8080/giveaways/{{id_giveaway}}/participate
 ```
 
 ○ Tirage au sort du gagnant (aléatoirement pondéré par le montant donné par
-l’utilisateur..., s’assurer que l’utilisateur n’est pas ban)
-GET
+l’utilisateur..., s’assurer que l’utilisateur n’est pas ban) :
 ```
-
+POST http://localhost:8080/giveaways/{{id_giveaway}}/close
 ```
 
 ####Blacklist
-○ Pouvoir blacklister un utilisateur (ne peut plus participer aux giveaway)
-PUT
+○ Pouvoir blacklister un utilisateur (ne peut plus participer aux giveaway) :
 ```
-
+PATCH http://localhost:8080/users/{{pseudo_user}}/blacklist
 ```
  
 ####Surveys
-○ Créer un sondage (2 choix possibles à chaque fois)
-POST
+○ Créer un sondage (2 choix possibles à chaque fois) :
+```
+POST http://localhost:8080/surveys
 ```
 
+○ Participer au sondage pour un utilisateur :
+```
+POST http://localhost:8080/surveys/{{id_survey}}
+```
+○ Avoir le résultat final du sondage :
+```
+GET http://localhost:8080/surveys/{{id_survey}}/result
 ```
 
-○ Participer au sondage pour un utilisateur
-POST
-```
 
-```
-○ Avoir le résultat final du sondage
-GET
-```
-http://localhost:8080/surveys
-```
