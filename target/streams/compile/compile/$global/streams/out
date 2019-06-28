@@ -1,0 +1,16 @@
+[0m[[0m[33mwarn[0m] [0m[0m/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/com/felicita/_utils/helpers/ActorsHelpers.scala:24:73: unreachable code[0m
+[0m[[0m[33mwarn[0m] [0m[0m      case "users" => cc.asInstanceOf[Users].productIterator.to.mkString("'","','","'")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/com/felicita/_utils/helpers/ActorsHelpers.scala:33:5: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: None[0m
+[0m[[0m[33mwarn[0m] [0m[0m    request match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/com/felicita/actors/GiveawaysActor.scala:85:9: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: None[0m
+[0m[[0m[33mwarn[0m] [0m[0m        user match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/src/main/scala/com/felicita/actors/SurveysActor.scala:72:9: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: (None, None), (_, None), (_, Some(_))[0m
+[0m[[0m[33mwarn[0m] [0m[0m        (userOption, responseOption) match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mfour warnings found[0m

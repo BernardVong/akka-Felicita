@@ -32,3 +32,113 @@ INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and ou
 INFO  time: connected to build server in 4.37s
 INFO  time: imported build in 0.11s
 INFO  time: indexed workspace in 2.32s
+INFO  time: initialize in 0.48s
+INFO  running embedded 'bloop bsp --protocol local --socket /var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp1754353339262995852/d7tn74qfqklr.socket'
+The server is listening for incoming connections at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp1754353339262995852/d7tn74qfqklr.socket...
+Accepted incoming BSP client connection at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp1754353339262995852/d7tn74qfqklr.socket
+INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/manitraranaivoharison/Library/Caches/org.scalameta.metals/bsp.trace.json
+request received: build/initialize
+INFO  time: connected to build server in 4.49s
+BSP initialization handshake complete.
+INFO  time: imported build in 0.12s
+INFO  time: indexed workspace in 0.77s
+WARN  no build target: 
+INFO  shutting down Metals
+shutdown request received: build/shutdown
+[0m[31m[E][0m BSP server cancelled, closing socket...
+Client in /Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/.bloop triggered cancellation. Cancelling tasks...
+INFO  bloop exit: 0
+INFO  time: initialize in 0.49s
+INFO  running embedded 'bloop bsp --protocol local --socket /var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp539025044862451621/lqbz65ynmtv4.socket'
+INFO  running '/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/metals1162444267344033358/sbt-launch.jar metalsEnable bloopInstall'
+The server is listening for incoming connections at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp539025044862451621/lqbz65ynmtv4.socket...
+Accepted incoming BSP client connection at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp539025044862451621/lqbz65ynmtv4.socket
+INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/manitraranaivoharison/Library/Caches/org.scalameta.metals/bsp.trace.json
+request received: build/initialize
+INFO  time: connected to build server in 5s
+BSP initialization handshake complete.
+INFO  time: imported build in 0.16s
+INFO  time: indexed workspace in 1.11s
+WARN  no build target: 
+INFO  [info] Loading settings for project global-plugins from metals.sbt ...
+INFO  [info] Loading global plugins from /Users/manitraranaivoharison/.sbt/1.0/plugins
+INFO  [info] Updating ProjectRef(uri("file:/Users/manitraranaivoharison/.sbt/1.0/plugins/"), "global-plugins")...
+INFO  [info] Done updating.
+INFO  [info] Loading settings for project root-4aibd-akka-project-build from plugins.sbt ...
+INFO  [info] Loading project definition from /Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/project
+INFO  [info] Updating ProjectRef(uri("file:/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/project/"), "root-4aibd-akka-project-build")...
+INFO  [info] Done updating.
+INFO  [success] Generated .bloop/root-4aibd-akka-project-build.json
+INFO  [success] Total time: 2 s, completed 28 juin 2019 12:08:49
+INFO  [info] Updating ProjectRef(uri("file:/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/project/"), "root-4aibd-akka-project-build")...
+INFO  [info] Done updating.
+INFO  [info] Loading settings for project root-4aibd-akka-project from build.sbt ...
+INFO  [info] Set current project to 4aibd-akka-project (in build file:/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/)
+INFO  [info] Set current project to 4aibd-akka-project (in build file:/Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/)
+INFO  [info] semanticdb-scalac is enabled
+INFO  [info] Updating ...
+INFO  [info] Done updating.
+INFO  [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+INFO  [info] downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-stream-testkit_2.12/2.4.18/akka-stream-testkit_2.12-2.4.18-sources.jar ...
+INFO  [info] downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-http-testkit_2.12/10.0.7/akka-http-testkit_2.12-10.0.7-sources.jar ...
+INFO  [info] downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.12/2.4.18/akka-testkit_2.12-2.4.18-sources.jar ...
+INFO  [info] downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.12/2.5.23/akka-testkit_2.12-2.5.23-sources.jar ...
+INFO  [info] downloading https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.12/2.5.23/akka-actor_2.12-2.5.23-sources.jar ...
+INFO  [info] 	[SUCCESSFUL ] com.typesafe.akka#akka-testkit_2.12;2.5.23!akka-testkit_2.12.jar(src) (723ms)
+INFO  [info] 	[SUCCESSFUL ] com.typesafe.akka#akka-http-testkit_2.12;10.0.7!akka-http-testkit_2.12.jar(src) (858ms)
+INFO  [info] 	[SUCCESSFUL ] com.typesafe.akka#akka-stream-testkit_2.12;2.4.18!akka-stream-testkit_2.12.jar(src) (862ms)
+INFO  [info] 	[SUCCESSFUL ] com.typesafe.akka#akka-testkit_2.12;2.4.18!akka-testkit_2.12.jar(src) (864ms)
+INFO  [info] 	[SUCCESSFUL ] com.typesafe.akka#akka-actor_2.12;2.5.23!akka-actor_2.12.jar(src) (868ms)
+INFO  [warn] 	Detected merged artifact: [FAILED     ] com.artima.supersafe#supersafe_2.12.8;1.1.7!supersafe_2.12.8.jar(src):  (0ms).
+INFO  [warn] ==== local: tried
+INFO  [warn] ==== public: tried
+INFO  [warn]   https://repo1.maven.org/maven2/com/artima/supersafe/supersafe_2.12.8/1.1.7/supersafe_2.12.8-1.1.7-sources.jar
+INFO  [warn] ==== local-preloaded-ivy: tried
+INFO  [warn]   /Users/manitraranaivoharison/.sbt/preloaded/com.artima.supersafe/supersafe_2.12.8/1.1.7/srcs/supersafe_2.12.8-sources.jar
+INFO  [warn] ==== local-preloaded: tried
+INFO  [warn]   file:////Users/manitraranaivoharison/.sbt/preloaded/com/artima/supersafe/supersafe_2.12.8/1.1.7/supersafe_2.12.8-1.1.7-sources.jar
+INFO  [warn] ==== Artima Maven Repository: tried
+INFO  [warn]   http://repo.artima.com/releases/com/artima/supersafe/supersafe_2.12.8/1.1.7/supersafe_2.12.8-1.1.7-sources.jar
+INFO  [warn] ==== sonatype-releases: tried
+INFO  [warn]   https://oss.sonatype.org/content/repositories/releases/com/artima/supersafe/supersafe_2.12.8/1.1.7/supersafe_2.12.8-1.1.7-sources.jar
+INFO  [warn] ==== sonatype-snapshots: tried
+INFO  [warn]   https://oss.sonatype.org/content/repositories/snapshots/com/artima/supersafe/supersafe_2.12.8/1.1.7/supersafe_2.12.8-1.1.7-sources.jar
+INFO  [warn] ==== Artima Maven Repository: tried
+INFO  [warn]   http://repo.artima.com/releases/com/artima/supersafe/supersafe_2.12.8/1.1.7/supersafe_2.12.8-1.1.7-sources.jar
+INFO  [warn] 	::::::::::::::::::::::::::::::::::::::::::::::
+INFO  [warn] 	::              FAILED DOWNLOADS            ::
+INFO  [warn] 	:: ^ see resolution messages for details  ^ ::
+INFO  [warn] 	::::::::::::::::::::::::::::::::::::::::::::::
+INFO  [warn] 	:: com.artima.supersafe#supersafe_2.12.8;1.1.7!supersafe_2.12.8.jar(src)
+INFO  [warn] 	::::::::::::::::::::::::::::::::::::::::::::::
+INFO  [success] Generated .bloop/root-4aibd-akka-project.json
+INFO  [success] Generated .bloop/root-4aibd-akka-project-test.json
+INFO  [success] Total time: 4 s, completed 28 juin 2019 12:08:56
+INFO  build tool exit: 0
+INFO  time: ran 'sbt bloopInstall' in 25s
+INFO  disconnected: build server
+shutdown request received: build/shutdown
+Client in /Users/manitraranaivoharison/Documents/WorkFolder/ProjectStudent/4aibd-akka-project/.bloop triggered cancellation. Cancelling tasks...
+[0m[31m[E][0m BSP server cancelled, closing socket...
+INFO  running embedded 'bloop bsp --protocol local --socket /var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp6351907085580057600/-l4bs78mzot8q.socket'
+INFO  bloop exit: 0
+The server is listening for incoming connections at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp6351907085580057600/-l4bs78mzot8q.socket...
+Accepted incoming BSP client connection at local:///var/folders/wt/nsy8c09d0pj4h21hf8lyzl640000gn/T/bsp6351907085580057600/-l4bs78mzot8q.socket
+INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/manitraranaivoharison/Library/Caches/org.scalameta.metals/bsp.trace.json
+request received: build/initialize
+INFO  time: connected to build server in 0.22s
+BSP initialization handshake complete.
+INFO  time: indexed workspace in 2.3s
+WARN  no build target: 
+INFO  compiling root-4aibd-akka-project (14 scala sources)
+INFO  Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.8. Compiling...
+INFO    Compilation completed in 14.058s.
+INFO  time: compiled root-4aibd-akka-project in 29s
+juin 28, 2019 12:14:56 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 6
+juin 28, 2019 12:35:43 PM scala.meta.internal.pc.CompilerAccess handleError
+GRAVE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.HoverProvider.seenFromType(HoverProvider.scala:106)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:42)
+
