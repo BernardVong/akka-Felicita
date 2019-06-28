@@ -9,7 +9,7 @@ Introduction to Scala with AKKA Framework
     </tr>
     <tr>
       <td>Manitra RANAIVOHARISON</td>
-      <td><a href="https://github.com/Harisonm">Github</a></td>
+      <td><a href="https://github.com/Harisonm">Gitlab</a></td>
     </tr>
 </table>
 
