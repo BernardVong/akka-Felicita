@@ -51,11 +51,11 @@ url as "http://localhost:8080"
 
 Use the Postman Collection above and refer to the list of routes below
 
-###OR
+### OR
 
 Use those routes below :
 
-####Tips
+#### Tips
 ○ Récupérer la liste de tous les donateurs (liste de users) :
 ```
 GET http://localhost:8080/tips
@@ -86,14 +86,14 @@ GET http://localhost:8080/tips/users/distinct
 GET http://localhost:8080/tips/users/{{id_user}}/total
 ```
 
-####Subscribers
+#### Subscribers
 ○ Récupérer la liste de tous les abonnées (liste de users) :
 ```
 GET http://localhost:8080/users/subscribers
 ```
 
 
-####Giveaways
+#### Giveaways
 ○ Créer un giveaway
 ```
 POST http://localhost:8080/giveaways
@@ -110,13 +110,13 @@ l’utilisateur..., s’assurer que l’utilisateur n’est pas ban) :
 POST http://localhost:8080/giveaways/{{id_giveaway}}/close
 ```
 
-####Blacklist
+#### Blacklist
 ○ Pouvoir blacklister un utilisateur (ne peut plus participer aux giveaway) :
 ```
 PATCH http://localhost:8080/users/{{pseudo_user}}/blacklist
 ```
  
-####Surveys
+#### Surveys
 ○ Créer un sondage (2 choix possibles à chaque fois) :
 ```
 POST http://localhost:8080/surveys
