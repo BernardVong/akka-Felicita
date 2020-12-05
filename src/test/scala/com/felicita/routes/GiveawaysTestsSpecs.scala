@@ -7,8 +7,7 @@ import akka.util.{ByteString, Timeout}
 import com.felicita._utils.JsonSupport
 import com.felicita.actors._
 import org.scalatest.concurrent.ScalaFutures
-import org.scalatest.{Matchers, WordSpec}
-
+import org.scalatest._
 import scala.concurrent.duration._
 
 

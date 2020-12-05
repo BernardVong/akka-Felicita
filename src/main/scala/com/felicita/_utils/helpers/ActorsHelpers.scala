@@ -19,9 +19,9 @@ object ActorsHelpers {
   def getValuesFromJsonToString(json: JsValue) : String = json.asInstanceOf[JsObject].fields.values.mkString("'","','","'").replaceAll("\"", "")
   def getValuesFromCaseClassToStringUser(instanceType: String, cc: Any) : String = {
     instanceType match {
-      case "user" => cc.asInstanceOf[User].productIterator.to.mkString("'","','","'")
-      case "users" => cc.asInstanceOf[Users].productIterator.to.mkString("'","','","'")
-      case "users" => cc.asInstanceOf[Users].productIterator.to.mkString("'","','","'")
+      case "user" => cc.asInstanceOf[User].productIterator.mkString("'","','","'")
+      case "users" => cc.asInstanceOf[Users].productIterator.mkString("'","','","'")
+      case "users" => cc.asInstanceOf[Users].productIterator.mkString("'","','","'")
     }
   }
   /** FIELDS/VALUES END **/

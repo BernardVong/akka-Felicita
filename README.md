@@ -131,4 +131,5 @@ POST http://localhost:8080/surveys/{{id_survey}}
 GET http://localhost:8080/surveys/{{id_survey}}/result
 ```
 
-
+### Warning
+Depuis la version 3.2.0 de Scalatest, il y a de nouveau changement au niveau de WordSpec et Matchers, voir le [release note](https://www.scalatest.org/release_notes/3.2.0)
